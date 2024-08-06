@@ -7,7 +7,7 @@ interface Props
 	extends Pick<
 		Movie,
 		'title' | 'poster_path' | 'release_date' | 'vote_average'
-	> { }
+	> {}
 
 const MovieCard = ({
 	title,
@@ -25,12 +25,14 @@ const MovieCard = ({
 					height={200}
 					className="rounded-2xl w-[150px] h-[225px]"
 				/>
-				<VoteAverage
-					voteAverage={vote_average}
-					size="sm"
-					aria-label={`Vote average for ${title} is ${vote_average}`}
-					className="absolute -bottom-3 left-3 text-white bg-black rounded-full z-30"
-				/>
+				{vote_average !== 0 && (
+					<VoteAverage
+						voteAverage={vote_average}
+						size="sm"
+						aria-label={`Vote average for ${title} is ${vote_average}`}
+						className="absolute -bottom-3 left-3 text-white bg-black rounded-full z-30"
+					/>
+				)}
 			</div>
 			<h3 className="pt-5 font-bold line-clamp-2">{title} </h3>
 			<span className="text-sm text-gray-600">{formatDate(release_date)} </span>

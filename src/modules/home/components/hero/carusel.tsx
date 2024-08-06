@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import { Autoplay } from 'swiper/modules'
-import type { TrendingResult } from '@/modules/home/types/trending-result'
 import { baseUrlImage } from '@/modules/core/utils/config'
 import MovieInfoHero from './movie-info-hero'
+import type { Movie } from '@/modules/core/types/movie'
 
 interface Props {
-	movies: TrendingResult[] | undefined
+	movies: Movie[] | undefined
 }
 
 const Carusel = ({ movies }: Props) => {

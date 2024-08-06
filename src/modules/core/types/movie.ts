@@ -1,4 +1,4 @@
-export interface TrendingResult {
+export interface Movie {
 	backdrop_path: string
 	id: number
 	title: string
@@ -14,9 +14,4 @@ export interface TrendingResult {
 	video: boolean
 	vote_average: number
 	vote_count: number
-}
-
-export interface TrendingsResponse {
-	page: number
-	results: TrendingResult[]
 }

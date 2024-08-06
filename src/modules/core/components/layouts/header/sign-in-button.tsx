@@ -11,7 +11,7 @@ const SignInButton = () => {
 			className="text-white"
 			startContent={<UserCircleIcon size={18} strokeWidth={1.8} />}
 		>
-			Ingresar
+			Sign in
 		</Button>
 	)
 }

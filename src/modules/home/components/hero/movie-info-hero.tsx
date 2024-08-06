@@ -1,9 +1,10 @@
-import type { TrendingResult } from "@/modules/home/types/trending-result"
+import VoteAverage from "@/modules/core/components/vote-average"
+import type { Movie } from "@/modules/core/types/movie"
 import { CircularProgress } from "@nextui-org/progress"
 import { FavouriteIcon, Bookmark02Icon, Share08Icon } from "hugeicons-react"
 
 interface Props {
-  movie: TrendingResult
+  movie: Movie
 }
 const MovieInfoHero = ({ movie }: Props) => {
   return (
@@ -13,15 +14,17 @@ const MovieInfoHero = ({ movie }: Props) => {
           <h2 className="text-5xl font-ibmPlexSans text-white text-balance">
             {movie.title}
           </h2>
-          <p className="text-pretty w-3/4 py-3 text-gray-300 text-lg">{movie.overview} </p>
+          <p className="text-pretty w-3/4 py-3 text-gray-300 text-lg">{movie.overview}
+          </p>
         </article>
-        <CircularProgress
-          size="lg"
-          value={movie.vote_average * 10}
-          color="success"
-          formatOptions={{ style: 'percent' }}
-          showValueLabel={true}
-        />
+
+        {/* Vote Average*/}
+
+        {
+          movie.vote_average !== 0 && (
+            <VoteAverage voteAverage={movie.vote_average} size="lg" />
+          )
+        }
       </div>
       {/* Actions */}
 

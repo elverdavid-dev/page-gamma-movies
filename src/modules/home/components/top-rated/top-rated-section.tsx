@@ -1,18 +1,18 @@
 import MovieCard from '@/modules/core/components/card/movie-card'
 import SeeMoreButton from '@/modules/core/components/common/see-more-button'
 import Subtitle from '@/modules/core/components/common/subtitle'
-import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
+import { getTopRatedMovies } from '@/modules/home/services/get-top-reted-movies'
 
-const PopularSection = async () => {
-	const popularMovies = await getPopularMovies()
+const TopRatedSection = async () => {
+	const topRatedMovies = await getTopRatedMovies()
 	return (
-		<section className="py-16 container mx-auto">
+		<section className="container mx-auto">
 			<div className="flex items-center justify-between">
-				<Subtitle text="Popular" />
-				<SeeMoreButton path="/popular" />
+				<Subtitle text="Top Rated" />
+				<SeeMoreButton path="/top-reted" />
 			</div>
 			<div className="flex items-start gap-x-4 overflow-x-auto scrollbar-hide scroll-smooth">
-				{popularMovies?.results.map((movie) => (
+				{topRatedMovies?.results.map((movie) => (
 					<MovieCard
 						title={movie.title}
 						poster_path={movie.poster_path}
@@ -26,4 +26,4 @@ const PopularSection = async () => {
 	)
 }
 
-export default PopularSection
+export default TopRatedSection

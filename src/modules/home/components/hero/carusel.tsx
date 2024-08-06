@@ -18,7 +18,7 @@ const Carusel = ({ movies }: Props) => {
 			modules={[Autoplay]}
 			autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			loop={true}
-
+			aria-label="Trending movies carousel"
 		>
 			{movies?.map((movie) => (
 				<SwiperSlide key={movie.id} className="relative">
@@ -33,7 +33,7 @@ const Carusel = ({ movies }: Props) => {
 					{/* Black gradient overlay for better text readability */}
 					<div
 						className="absolute inset-0 bg-gradient-to-t via-black/50 from-black  to-transparent z-10"
-						aria-label="Background gradient overlay for text readability"
+						aria-hidden="true"
 					/>
 				</SwiperSlide>
 			))}

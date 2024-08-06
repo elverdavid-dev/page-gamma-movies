@@ -1,8 +1,9 @@
 import type { MoviesResponse } from '@/modules/core/types/movies-response'
 import { apiKey, baseUrl } from '@/modules/core/utils/config'
 
-export const getTrendingMovies = async () => {
-	const url = `${baseUrl}/trending/movie/day?api_key=${apiKey}&language=en-US`
+export const getTopRatedMovies = async () => {
+	const url = `${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
+
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })
 		if (!response.ok) {

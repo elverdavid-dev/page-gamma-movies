@@ -1,18 +1,14 @@
-"use client"
+'use client'
 
-import { NextUIProvider } from "@nextui-org/system"
-import type { ReactNode } from "react"
+import { NextUIProvider } from '@nextui-org/react'
+import type { ReactNode } from 'react'
 
 interface Props {
-  children: ReactNode
+	children: ReactNode
 }
 
 const Provider = ({ children }: Props) => {
-  return (
-    <NextUIProvider>
-      {children}
-    </NextUIProvider>
-  )
+	return <NextUIProvider>{children}</NextUIProvider>
 }
 
 export default Provider

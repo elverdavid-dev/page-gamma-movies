@@ -1,14 +1,13 @@
-import Carusel from '@/modules/home/components/hero/carusel'
+import HeroSection from '@/modules/home/components/hero/hero-section'
+import NowPlayingSection from '@/modules/home/components/now-playing/now-playing-section'
 import PopularSection from '@/modules/home/components/popular/popular-section'
-import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
-import { gettrendingMovies } from '@/modules/home/services/get-trending-movies'
 
 const Home = async () => {
-	const trendingMovies = await gettrendingMovies()
 	return (
 		<>
-			<Carusel movies={trendingMovies?.results} />
+			<HeroSection />
 			<PopularSection />
+			<NowPlayingSection />
 		</>
 	)
 }

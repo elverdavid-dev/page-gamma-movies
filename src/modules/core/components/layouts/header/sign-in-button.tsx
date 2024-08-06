@@ -8,7 +8,7 @@ const SignInButton = () => {
 		<Button
 			variant="light"
 			color="default"
-			className='text-white'
+			className="text-white"
 			startContent={<UserCircleIcon size={18} strokeWidth={1.8} />}
 		>
 			Ingresar

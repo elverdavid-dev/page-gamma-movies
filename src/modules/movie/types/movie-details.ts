@@ -39,6 +39,7 @@ interface SpokenLanguage {
 export interface MovieDetail extends Movie {
 	belongs_to_collection: Collection | null
 	budget: number
+	revenue: number
 	runtime: number
 	genres: Genre[]
 	homepage: string | null

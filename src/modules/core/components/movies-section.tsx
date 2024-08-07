@@ -13,8 +13,8 @@ interface Props {
 
 const MoviesSection = async ({ title, moviesData, seeMorePath }: Props) => {
 	return (
-		<section className="mt-16 container mx-auto">
-			<div className="flex items-center justify-between">
+		<section className="mt-16 px-2 md:px-0  md:container md:mx-auto">
+			<div className="flex items-center justify-between pb-5">
 				<Subtitle text={title} />
 				<SeeMoreButton path={seeMorePath} />
 			</div>

@@ -4,9 +4,9 @@ import { getGenres } from '@/modules/home/services/get-genres'
 const GenresSection = async () => {
 	const genresData = await getGenres()
 	return (
-		<section className="mt-16 container mx-auto">
+		<section className="mt-16 px-2 md:px-0 md:container md:mx-auto">
 			<Subtitle text="Genres" />
-			<div className="flex items-start gap-x-4 overflow-x-auto scrollbar-hide scroll-smooth">
+			<div className="flex items-start gap-x-4 overflow-x-auto scrollbar-hide scroll-smooth mt-5">
 				{genresData?.genres.map(({ id, name }) => (
 					<span
 						key={id}

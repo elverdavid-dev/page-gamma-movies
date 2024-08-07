@@ -1,6 +1,7 @@
 import VoteAverage from '@/modules/core/components/vote-average'
 import type { Movie } from '@/modules/core/types/movie'
 import { FavouriteIcon, Bookmark02Icon, Share08Icon } from 'hugeicons-react'
+import Link from 'next/link'
 
 interface Props {
 	movie: Movie
@@ -8,26 +9,33 @@ interface Props {
 const MovieInfoHero = ({ movie }: Props) => {
 	return (
 		<section className="absolute bottom-0 inset-x-0 z-20 p-5 container mx-auto text-white">
-			<div className="flex items-center justify-between">
-				<article>
-					<h2 className="text-5xl font-ibmPlexSans text-white text-balance">
-						{movie.title}
-					</h2>
-					<p className="text-pretty w-3/4 py-3 text-gray-300 text-lg">
-						{movie.overview}
-					</p>
-				</article>
+			<Link href={`/movie/${movie.id}`}>
+				<div className="md:flex md:items-center md:justify-between">
+					<article>
+						<h2 className="text-5xl font-ibmPlexSans text-white text-balance">
+							{movie.title}
+						</h2>
+						<p className="text-pretty md:w-3/4 py-3 text-gray-300 text-lg">
+							{movie.overview}
+						</p>
+					</article>
 
-				{/* Vote Average*/}
+					{/* Vote Average*/}
 
-				{movie.vote_average !== 0 && (
-					<VoteAverage
-						voteAverage={movie.vote_average}
-						size="lg"
-						aria-label={`Vote average for ${movie.title} is ${movie.vote_average}`}
-					/>
-				)}
-			</div>
+					{movie.vote_average !== 0 && (
+						<VoteAverage
+							voteAverage={movie.vote_average}
+							size="lg"
+							classNames={{
+								svg: 'w-20 h-20 drop-shadow-md',
+								track: 'stroke-white/10',
+								value: 'text-xl font-semibold text-white',
+							}}
+							aria-label={`Vote average for ${movie.title} is ${movie.vote_average}`}
+						/>
+					)}
+				</div>
+			</Link>
 			{/* Actions */}
 
 			<div className="flex items-center gap-x-10 justify-end">

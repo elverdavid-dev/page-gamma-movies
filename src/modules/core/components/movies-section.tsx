@@ -1,8 +1,8 @@
 import MovieCard from '@/modules/core/components/card/movie-card'
 import SeeMoreButton from '@/modules/core/components/common/see-more-button'
 import Subtitle from '@/modules/core/components/common/subtitle'
-import type { MoviesResponse } from '@/modules/core/types/movies-response'
 import type { Movie } from '@/modules/core/types/movie'
+import type { MoviesResponse } from '@/modules/core/types/movies-response'
 import Link from 'next/link'
 
 interface Props {

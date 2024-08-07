@@ -7,8 +7,7 @@ const SignInButton = () => {
 	return (
 		<Button
 			variant="light"
-			color="default"
-			className="text-white"
+			className="text-white w-full lg:w-auto text-lg py-2 lg:text-base lg:py-0 bg-[#F0B90B] lg:bg-transparent"
 			startContent={<UserCircleIcon size={18} strokeWidth={1.8} />}
 		>
 			Sign in

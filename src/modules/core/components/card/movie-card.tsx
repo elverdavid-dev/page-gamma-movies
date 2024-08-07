@@ -1,8 +1,8 @@
+import ImageWrapper from '@/modules/core/components/common/image-wrapper'
+import VoteAverage from '@/modules/core/components/vote-average'
 import type { Movie } from '@/modules/core/types/movie'
 import { baseUrlImage } from '@/modules/core/utils/config'
 import { formatDate } from '@/modules/core/utils/format-date'
-import VoteAverage from '@/modules/core/components/vote-average'
-import ImageWrapper from '@/modules/core/components/common/image-wrapper'
 interface Props
 	extends Pick<
 		Movie,

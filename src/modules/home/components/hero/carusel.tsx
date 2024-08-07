@@ -3,11 +3,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/autoplay'
-import { Autoplay } from 'swiper/modules'
-import { baseUrlImage } from '@/modules/core/utils/config'
-import MovieInfoHero from './movie-info-hero'
 import type { Movie } from '@/modules/core/types/movie'
+import { baseUrlImage } from '@/modules/core/utils/config'
+import MovieInfoHero from '@/modules/home/components/hero/movie-info-hero'
 import Link from 'next/link'
+import { Autoplay } from 'swiper/modules'
 
 interface Props {
 	movies: Movie[] | undefined

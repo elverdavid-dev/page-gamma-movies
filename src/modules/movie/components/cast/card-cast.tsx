@@ -1,6 +1,6 @@
 import ImageWrapper from '@/modules/core/components/common/image-wrapper'
-import type { CastMember } from '@/modules/movie/types/movie-cast'
 import { baseUrlImage } from '@/modules/core/utils/config'
+import type { CastMember } from '@/modules/movie/types/movie-cast'
 import { ImageNotFound01Icon } from 'hugeicons-react'
 
 interface Props {

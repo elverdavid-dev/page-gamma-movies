@@ -1,21 +1,21 @@
 'use client'
 import ImageWrapper from '@/modules/core/components/common/image-wrapper'
+import VoteAverage from '@/modules/core/components/vote-average'
 import { baseUrlImage } from '@/modules/core/utils/config'
+import { formatDate } from '@/modules/core/utils/format-date'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
+import { formatRuntime } from '@/modules/movie/utils/format-runtime'
 import { Button } from '@nextui-org/react'
 import {
-	PlayIcon,
-	Calendar03Icon,
-	FavouriteIcon,
 	Bookmark02Icon,
+	Calendar03Icon,
+	Clock01Icon,
+	FavouriteIcon,
+	PlayIcon,
 	Share08Icon,
 	Tag01Icon,
-	Clock01Icon,
 } from 'hugeicons-react'
 import Link from 'next/link'
-import { formatRuntime } from '@/modules/movie/utils/format-runtime'
-import { formatDate } from '@/modules/core/utils/format-date'
-import VoteAverage from '@/modules/core/components/vote-average'
 
 interface Props {
 	movieDetails: MovieDetail | undefined

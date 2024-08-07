@@ -1,5 +1,3 @@
-import CastSection from '@/modules/movie/components/cast/cast-section'
-import DetailSidebar from '@/modules/movie/components/cast/details-sidebar'
 import HeroSection from '@/modules/movie/components/hero/hero-section'
 import { getMovieDetails } from '@/modules/movie/services/get-movie-details'
 

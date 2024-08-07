@@ -8,17 +8,16 @@
     "start": "next start",
     "format": "biome format ./src/ --write",
     "lint": "biome lint ./src",
-    "check": "biome check --apply ./src/"
+    "check": "biome check --write ./src/"
   },
   "dependencies": {
-    "@nextui-org/button": "^2.0.37",
-    "@nextui-org/system": "^2.2.5",
-    "@nextui-org/theme": "^2.2.9",
+    "@nextui-org/react": "^2.4.6",
     "framer-motion": "^11.3.21",
     "hugeicons-react": "^0.3.0",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swiper": "^11.1.9"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

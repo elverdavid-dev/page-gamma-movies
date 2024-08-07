@@ -8,7 +8,7 @@ export interface Movie {
 	media_type: string
 	adult: boolean
 	original_language: string
-	genre_ids: number[] // Assuming genre_ids is an array of numbers
+	genre_ids: number[]
 	popularity: number
 	release_date: string
 	video: boolean

@@ -14,7 +14,6 @@ const Home = async () => {
 			<NowPlayingSection />
 			<UpcomingSection />
 			<TopRatedSection />
-			
 		</>
 	)
 }

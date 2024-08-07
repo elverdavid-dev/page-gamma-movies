@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Logout01Icon } from 'hugeicons-react'
 import SignInButton from './sign-in-button'
+import Logo from '@/modules/core/components/common/logo'
 const Navbar = () => {
 	const navLinks = [
 		{ name: 'Popular', path: '/popular' },
@@ -15,13 +16,7 @@ const Navbar = () => {
 	return (
 		<header className="w-full py-5 bg-black sticky top-0 z-50">
 			<nav className="flex items-center justify-between container mx-auto">
-				<img
-					src="logo.svg"
-					alt="logo"
-					width={150}
-					height={150}
-					className="mr-16"
-				/>
+				<Logo />
 				{/* navLinks */}
 				<div className="space-x-5 flex-1">
 					{navLinks.map(({ name, path }) => (

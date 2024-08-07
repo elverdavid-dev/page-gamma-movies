@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "ui",
-    "home"
+    "home",
+    "movie"
   ]
 }

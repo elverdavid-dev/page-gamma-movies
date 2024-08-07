@@ -23,8 +23,8 @@ interface Props {
 }
 const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 	return (
-		<section className="absolute container mx-auto  inset-0 z-20 flex gap-x-5 mt-16">
-			<div className="">
+		<section className="static md:absolute px-2 md:px-0  md:container md:mx-auto  inset-0 z-10 md:flex md:gap-x-5 pt-16">
+			<div className="flex flex-col gap-y-3 items-center justify-center md:block pb-5 md:pb-0">
 				<ImageWrapper
 					src={`${baseUrlImage}/${movieDetails?.poster_path}`}
 					alt={movieDetails?.title}
@@ -45,32 +45,32 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 					Official Trailer
 				</Button>
 			</div>
-			<div className="text-white w-3/4">
+			<div className="text-white md:w-3/4">
 				{/* Title */}
-				<h1 className="text-5xl font-ibmPlexSans text-balance">
+				<h1 className="text-3xl md:text-5xl font-ibmPlexSans text-balance">
 					{movieDetails?.title}{' '}
 				</h1>
 
 				{/* MovieMetaData */}
-				<div className="flex items-center gap-x-5 pt-3 text-gray-300">
+				<div className="flex flex-wrap items-center gap-x-5 pt-3 text-gray-300">
 					<span className="flex items-center gap-x-1">
 						<Calendar03Icon size={18} strokeWidth={2} />
 						{formatDate(movieDetails?.release_date ?? '')}
 					</span>
-					<div className="flex items-center gap-x-1">
+					<div className="flex items-center gap-x-1 order-3 md:order-2">
 						<Tag01Icon size={18} strokeWidth={2} />
 						<span>
 							{movieDetails?.genres.map(({ name }) => name).join(', ')}
 						</span>
 					</div>
-					<span className="flex items-center gap-x-1">
+					<span className="flex items-center gap-x-1 order-2 md:order-3">
 						<Clock01Icon size={18} strokeWidth={2} />
 						{formatRuntime(movieDetails?.runtime ?? 0)}
 					</span>
 				</div>
 
 				{/* Overview */}
-				<div className="mt-16">
+				<div className=" pt-10 lg:pt-16">
 					<h2 className="text-3xl font-ibmPlexSans text-white pb-5">
 						Overview
 					</h2>
@@ -79,7 +79,7 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 					</p>
 				</div>
 
-				<section className="flex items-center justify-between mt-16">
+				<section className="flex items-center justify-between mt-16 pb-5 md:pb-0">
 					<div className="flex items-center gap-x-2">
 						{/* Vote Average*/}
 

@@ -14,11 +14,11 @@ const HeroSection = async ({ id, movieDetails }: Props) => {
 		<section className="relative">
 			<img
 				src={`${baseUrlImage}/${movieDetails?.backdrop_path}`}
-				alt=""
-				className="h-[561px] w-full object-cover"
+				alt={`movie ${movieDetails?.title}`}
+				className="absolute h-full md:static md:h-[561px] w-full object-cover -z-10"
 			/>
 			<div
-				className="absolute inset-0 bg-gradient-to-t  from-black via-black/80  to-black/65 z-10"
+				className="absolute inset-0 w-full bg-gradient-to-t  from-black via-black/80  to-black/65 -z-10 md:z-0"
 				aria-hidden="true"
 			/>
 			<MovieInfoHero movieDetails={movieDetails} urlTrailer={urlTrailer} />

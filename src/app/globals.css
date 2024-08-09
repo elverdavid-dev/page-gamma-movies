@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos personalizados para la paginación del carrusel de Swiper */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #F0B90B !important;
+}

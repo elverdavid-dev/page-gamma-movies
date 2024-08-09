@@ -1,24 +1,30 @@
 'use client'
-import { Button, type ButtonProps, cn } from '@nextui-org/react'
+
+import { Button, Tooltip } from '@nextui-org/react'
 import { ArrowLeft01Icon } from 'hugeicons-react'
 import Link from 'next/link'
 
-interface Props extends ButtonProps {
+interface Props {
+	label?: string
 	path: string
 }
 
-const BackButton = ({ path, className }: Props) => {
+const BackButton = ({ path, label }: Props) => {
 	return (
-		<Button
-			as={Link}
-			radius="lg"
-			href={path}
-			isIconOnly
-			variant="light"
-			className={cn('z-30 text-white', className)}
-		>
-			<ArrowLeft01Icon size={30} strokeWidth={2.5} />
-		</Button>
+		<div className="flex items-center gap-x-4 py-5">
+			<Tooltip
+				content="Regresar"
+				placement="bottom"
+				color="foreground"
+				showArrow
+			>
+				<Button href={path} as={Link} isIconOnly radius="lg" variant="flat">
+					<ArrowLeft01Icon className="text-gray-700" />
+					<span className="sr-only">Regresar</span>
+				</Button>
+			</Tooltip>
+			<h2 className="font-bold text-2xl text-gray-800">{label}</h2>
+		</div>
 	)
 }
 

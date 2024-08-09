@@ -28,7 +28,7 @@ const Carusel = ({ movies }: Props) => {
 							src={`${baseUrlImage}/${movie.backdrop_path}`}
 							alt={movie.original_title}
 							height={150}
-							className="h-[561px] w-full object-cover"
+							className="h-[569px] w-full object-cover"
 						/>
 
 						{/* Black gradient overlay for better text readability */}

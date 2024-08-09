@@ -22,8 +22,8 @@ const MovieCard = ({
 					src={`${baseUrlImage}${poster_path}`}
 					alt={`Poster of ${title}`}
 					width={150}
-					height={200}
-					className="rounded-2xl w-[150px] h-[225px]"
+					height={225}
+					className="rounded-2xl w-[140px] lg:w-[150px] h-[225px]"
 				/>
 				{vote_average !== 0 && (
 					<VoteAverage

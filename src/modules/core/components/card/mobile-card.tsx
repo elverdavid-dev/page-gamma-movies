@@ -8,7 +8,7 @@ interface Props
 	extends Pick<
 		Movie,
 		'title' | 'poster_path' | 'release_date' | 'vote_average' | 'overview'
-	> { }
+	> {}
 
 const MobileCard = ({
 	title,

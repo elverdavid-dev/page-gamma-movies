@@ -3,6 +3,10 @@
     "ui",
     "home",
     "movie",
-    "genre"
+    "genre",
+    "popular",
+    "now-playing",
+    "upcoming",
+    "top-rated"
   ]
 }

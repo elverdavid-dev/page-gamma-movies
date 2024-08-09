@@ -16,10 +16,10 @@ import { useState } from 'react'
 const Navbar2 = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const navLinks = [
-		{ name: 'Popular', path: '/' },
-		{ name: 'Now Playing', path: '/' },
-		{ name: 'Upcoming', path: '/' },
-		{ name: 'Top Rated', path: '/' },
+		{ name: 'Popular', path: '/popular' },
+		{ name: 'Now Playing', path: '/now-playing' },
+		{ name: 'Upcoming', path: '/upcoming' },
+		{ name: 'Top Rated', path: '/top-rated' },
 		{ name: 'Favorite', path: '/' },
 		{ name: 'Saved', path: '/' },
 	]

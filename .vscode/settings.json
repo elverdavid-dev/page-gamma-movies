@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "ui",
     "home",
-    "movie"
+    "movie",
+    "genre"
   ]
 }

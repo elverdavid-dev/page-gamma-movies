@@ -1,5 +1,6 @@
 import Subtitle from '@/modules/core/components/common/subtitle'
 import { getGenres } from '@/modules/home/services/get-genres'
+import Link from 'next/link'
 
 const GenresSection = async () => {
 	const genresData = await getGenres()
@@ -8,12 +9,13 @@ const GenresSection = async () => {
 			<Subtitle text="Genres" />
 			<div className="flex items-start gap-x-4 overflow-x-auto scrollbar-hide scroll-smooth mt-5">
 				{genresData?.genres.map(({ id, name }) => (
-					<span
+					<Link
 						key={id}
-						className="flex-shrink-0 text-gray-800 hover:text-white hover:bg-black transition-all py-2 px-5 rounded-full"
+						href={`/genre/${id}?genreName=${name}`}
+						className="flex-shrink-0 text-gray-800 hover:text-white hover:bg-black transition-all py-2 px-5 rounded-full border border-gray-300"
 					>
 						{name}
-					</span>
+					</Link>
 				))}
 			</div>
 		</section>

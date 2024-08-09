@@ -4,6 +4,7 @@
     "home",
     "movie",
     "genre",
-    "popular"
+    "popular",
+    "now-playing"
   ]
 }

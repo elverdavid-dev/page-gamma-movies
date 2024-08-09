@@ -2,13 +2,13 @@ import MoviesGrid from '@/modules/core/components/movies/movies-grid'
 import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
 
 const PopularPage = async () => {
-  const popularMovies = await getPopularMovies()
+  const movies = await getPopularMovies()
 
   return (
     <MoviesGrid
-      movies={popularMovies?.results ?? []}
+      movies={movies?.results ?? []}
       title="Popular"
-      totalResults={popularMovies?.total_results ?? 0}
+      totalResults={movies?.total_results ?? 0}
     />
   )
 }

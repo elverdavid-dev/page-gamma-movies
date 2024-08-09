@@ -2,12 +2,13 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/pagination';
 import 'swiper/css/autoplay'
 import type { Movie } from '@/modules/core/types/movie'
 import { baseUrlImage } from '@/modules/core/utils/config'
 import MovieInfoHero from '@/modules/home/components/hero/movie-info-hero'
 import Link from 'next/link'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 
 interface Props {
 	movies: Movie[] | undefined
@@ -16,7 +17,8 @@ interface Props {
 const Carusel = ({ movies }: Props) => {
 	return (
 		<Swiper
-			modules={[Autoplay]}
+			modules={[Autoplay, Pagination]}
+			pagination={{ clickable: true, dynamicBullets: true }}
 			autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			loop={true}
 			aria-label="Trending movies carousel"

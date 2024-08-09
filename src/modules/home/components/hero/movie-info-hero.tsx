@@ -38,7 +38,7 @@ const MovieInfoHero = ({ movie }: Props) => {
 			</Link>
 			{/* Actions */}
 
-			<div className="flex items-center gap-x-10 justify-end">
+			<div className="flex items-center gap-x-10 justify-end pb-3">
 				<button
 					type="button"
 					className="active:scale-90 transition-all"

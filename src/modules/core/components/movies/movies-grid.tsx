@@ -2,25 +2,26 @@ import MobileCard from '@/modules/core/components/card/mobile-card'
 import MovieCard from '@/modules/core/components/card/movie-card'
 import BackButton from '@/modules/core/components/common/back-button'
 import { formatNumber } from '@/modules/core/utils/format-number'
-import { getMoviesByGenres } from '@/modules/genre/services/get-movies-by-genres'
 import Link from 'next/link'
+import type { Movie } from '@/modules/core/types/movie'
 
-interface Props {
-	idMovie: number
-	genreName?: string
+interface MoviesGridProps {
+	movies: Movie[]
+	title: string
+	totalResults: number
 }
-const GenreMoviesSection = async ({ idMovie, genreName }: Props) => {
-	const movies = await getMoviesByGenres(idMovie)
+
+const MoviesGrid = ({ movies, title, totalResults }: MoviesGridProps) => {
 	return (
-		<>
-			<div className="flex items-center justify-between">
-				<BackButton path="/" label={genreName} />
+		<section className="mt-5 mx-2 lg:mx-3">
+			<div className="flex items-center justify-between ">
+				<BackButton path="/" label={title} />
 				<span className="md:pr-5">
-					<strong>{formatNumber(movies?.total_results)}</strong> Total movies
+					<strong>{formatNumber(totalResults)}</strong> Total movies
 				</span>
 			</div>
 			<section className="flex flex-col gap-y-5 md:grid md:grid-cols-5 md:gap-y-10 lg:grid-cols-8 mt-16">
-				{movies?.results.map(
+				{movies.map(
 					({
 						id,
 						title,
@@ -54,8 +55,8 @@ const GenreMoviesSection = async ({ idMovie, genreName }: Props) => {
 					),
 				)}
 			</section>
-		</>
+		</section>
 	)
 }
 
-export default GenreMoviesSection
+export default MoviesGrid

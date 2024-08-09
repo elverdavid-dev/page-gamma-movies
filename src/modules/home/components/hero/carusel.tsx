@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import 'swiper/css/pagination';
+import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import type { Movie } from '@/modules/core/types/movie'
 import { baseUrlImage } from '@/modules/core/utils/config'

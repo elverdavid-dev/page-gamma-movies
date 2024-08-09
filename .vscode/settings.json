@@ -3,6 +3,7 @@
     "ui",
     "home",
     "movie",
-    "genre"
+    "genre",
+    "popular"
   ]
 }

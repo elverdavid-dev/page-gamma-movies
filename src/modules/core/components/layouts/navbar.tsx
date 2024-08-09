@@ -35,7 +35,7 @@ const Navbar2 = () => {
 			</NavbarBrand>
 			<NavbarContent className="hidden lg:flex" justify="start">
 				{navLinks.map(({ name, path }) => (
-					<NavbarItem key={path}>
+					<NavbarItem key={`menuItem-${name}`}>
 						<Link
 							href={path}
 							className="text-gray-300 text-lg md:text-base hover:text-white transition-all"
@@ -60,7 +60,7 @@ const Navbar2 = () => {
 			</NavbarContent>
 			<NavbarMenu className="bg-black pt-5 flex flex-col gap-y-5 items-center">
 				{navLinks.map(({ name, path }) => (
-					<NavbarMenuItem key={path}>
+					<NavbarMenuItem key={`menuItem-${name}`}>
 						<Link
 							href={path}
 							className="text-gray-300 text-lg md:text-base hover:text-white transition-all"

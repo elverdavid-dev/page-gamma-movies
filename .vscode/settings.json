@@ -5,6 +5,7 @@
     "movie",
     "genre",
     "popular",
-    "now-playing"
+    "now-playing",
+    "upcoming"
   ]
 }

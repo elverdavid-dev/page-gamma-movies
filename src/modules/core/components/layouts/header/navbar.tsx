@@ -15,6 +15,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import ThemeToggle from '@/modules/core/components/theme/theme-toggle'
+import SearchInput from './search-input'
 
 const Navbar2 = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,15 +25,12 @@ const Navbar2 = () => {
 		{ name: 'Now Playing', path: '/now-playing' },
 		{ name: 'Upcoming', path: '/upcoming' },
 		{ name: 'Top Rated', path: '/top-rated' },
-		{ name: 'Favorite', path: '/favorite' },
-		{ name: 'Saved', path: '/saved' },
 	]
 	return (
 		<Navbar
 			isMenuOpen={isMenuOpen}
 			onMenuOpenChange={setIsMenuOpen}
 			maxWidth="full"
-			className="bg-black"
 		>
 			<NavbarContent justify="center">
 				<NavbarBrand>
@@ -47,7 +45,7 @@ const Navbar2 = () => {
 						<Link
 							href={path}
 							className={cn(
-								'text-gray-300 text-lg md:text-base hover:text-white transition-all',
+								'text-lg md:text-base dark:text-gray-300 dark:hover:text-white',
 								pathName === path && 'text-[#F0B90B] hover:text-[#F0B90B]',
 							)}
 						>
@@ -57,11 +55,15 @@ const Navbar2 = () => {
 				))}
 			</NavbarContent>
 
+			{/* Searh,ThemeToggle,SignButton */}
 			<NavbarContent
 				as="div"
 				className="items-center flex pl-16 lg:pl-0"
 				justify="end"
 			>
+				<NavbarItem className="hidden lg:flex">
+					<SearchInput />
+				</NavbarItem>
 				<NavbarItem>
 					<ThemeToggle />
 				</NavbarItem>
@@ -70,21 +72,21 @@ const Navbar2 = () => {
 				</NavbarItem>
 			</NavbarContent>
 
-			{/* Toggle */}
+			{/* Toggle mobile*/}
 			<NavbarContent className="lg:hidden" justify="end">
 				<NavbarMenuToggle
-					className="text-white"
+					className="dark:text-white"
 					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
 				/>
 			</NavbarContent>
 
 			{/* Mobile navbar items */}
-			<NavbarMenu className="bg-black pt-5 flex flex-col gap-y-5 items-center z-50">
+			<NavbarMenu className="dark:bg-black pt-5 flex flex-col gap-y-5 items-center z-50">
 				{navLinks.map(({ name, path }) => (
 					<NavbarMenuItem key={`menuItem-${name}`}>
 						<Link
 							href={path}
-							className="text-gray-300 text-lg md:text-base hover:text-white transition-all"
+							className="dark:text-gray-300 text-lg md:text-base"
 						>
 							{name}
 						</Link>

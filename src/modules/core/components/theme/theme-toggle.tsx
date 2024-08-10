@@ -22,7 +22,7 @@ const ThemeToggle = () => {
 					isIconOnly
 					variant="light"
 					onClick={() => setTheme('light')}
-					className="data-[hover=true]:bg-default/5"
+					className="dark:data-[hover=true]:bg-default/5"
 				>
 					<Sun01Icon />
 				</Button>
@@ -31,7 +31,7 @@ const ThemeToggle = () => {
 					isIconOnly
 					variant="light"
 					onClick={() => setTheme('dark')}
-					className="text-foreground-50 data-[hover=true]:bg-default/5"
+					className="text-gray-800 data-[hover=true]:bg-default/5"
 				>
 					<Moon02Icon />
 				</Button>

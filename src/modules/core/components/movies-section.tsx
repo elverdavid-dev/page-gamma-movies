@@ -20,7 +20,7 @@ const MoviesSection = async ({ title, moviesData, seeMorePath }: Props) => {
 			</div>
 			<div className="flex items-start gap-x-2 lg:gap-x-4 overflow-x-auto scrollbar-hide scroll-smooth">
 				{moviesData?.results.map((movie: Movie) => (
-					<Link href={`/movie/${movie.id}`} key={movie.id}>
+					<Link href={`/movie/${movie.id}`} key={`movie-${movie.id}`}>
 						<MovieCard
 							title={movie.title}
 							poster_path={movie.poster_path}

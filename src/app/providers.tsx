@@ -3,6 +3,7 @@
 import { NextUIProvider } from '@nextui-org/react'
 import type { ReactNode } from 'react'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 
 interface Props {
 	children: ReactNode
@@ -16,7 +17,15 @@ const Provider = ({ children }: Props) => {
 				options={{ showSpinner: false }}
 				shallowRouting
 			/>
-			<NextUIProvider>{children}</NextUIProvider>
+			<NextUIProvider>
+				<NextThemesProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+				>
+					{children}
+				</NextThemesProvider>
+			</NextUIProvider>
 		</>
 	)
 }

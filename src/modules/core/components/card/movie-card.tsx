@@ -35,7 +35,9 @@ const MovieCard = ({
 				)}
 			</div>
 			<h3 className="pt-5 font-bold line-clamp-2">{title} </h3>
-			<span className="text-sm text-gray-600">{formatDate(release_date)} </span>
+			<span className="text-sm text-gray-600 dark:text-gray-300">
+				{formatDate(release_date)}{' '}
+			</span>
 		</article>
 	)
 }

@@ -16,9 +16,11 @@
     "hugeicons-react": "^0.3.0",
     "next": "14.2.5",
     "next-nprogress-bar": "^2.3.13",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.9",
+    "use-debounce": "^10.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

@@ -19,11 +19,13 @@ const BackButton = ({ path, label }: Props) => {
 				showArrow
 			>
 				<Button href={path} as={Link} isIconOnly radius="lg" variant="flat">
-					<ArrowLeft01Icon className="text-gray-700" />
+					<ArrowLeft01Icon className="text-gray-700 dark:text-gray-300" />
 					<span className="sr-only">Regresar</span>
 				</Button>
 			</Tooltip>
-			<h2 className="font-bold text-2xl text-gray-800">{label}</h2>
+			<h2 className="font-bold text-2xl text-gray-800 dark:text-gray-300">
+				{label}
+			</h2>
 		</div>
 	)
 }

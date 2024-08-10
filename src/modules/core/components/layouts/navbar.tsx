@@ -14,6 +14,7 @@ import {
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import ThemeToggle from '@/modules/core/components/theme/theme-toggle'
 
 const Navbar2 = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,15 +32,8 @@ const Navbar2 = () => {
 			isMenuOpen={isMenuOpen}
 			onMenuOpenChange={setIsMenuOpen}
 			maxWidth="full"
-			className="bg-black py-2"
+			className="bg-black"
 		>
-			{/* Toggle */}
-			<NavbarContent className="lg:hidden" justify="start">
-				<NavbarMenuToggle
-					className="text-white"
-					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-				/>
-			</NavbarContent>
 			<NavbarContent justify="center">
 				<NavbarBrand>
 					<Logo />
@@ -63,10 +57,25 @@ const Navbar2 = () => {
 				))}
 			</NavbarContent>
 
-			<NavbarContent className="lg:items-center lg:flex" justify="end">
+			<NavbarContent
+				as="div"
+				className="items-center flex pl-16 lg:pl-0"
+				justify="end"
+			>
 				<NavbarItem>
+					<ThemeToggle />
+				</NavbarItem>
+				<NavbarItem className="hidden lg:flex">
 					<SignInButton />
 				</NavbarItem>
+			</NavbarContent>
+
+			{/* Toggle */}
+			<NavbarContent className="lg:hidden" justify="end">
+				<NavbarMenuToggle
+					className="text-white"
+					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				/>
 			</NavbarContent>
 
 			{/* Mobile navbar items */}
@@ -81,6 +90,7 @@ const Navbar2 = () => {
 						</Link>
 					</NavbarMenuItem>
 				))}
+				<SignInButton />
 			</NavbarMenu>
 		</Navbar>
 	)

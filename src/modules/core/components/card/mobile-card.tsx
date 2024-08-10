@@ -29,7 +29,7 @@ const MobileCard = ({
 			<div className="p-2 flex-1">
 				<h2 className="font-bold text-balance text-lg line-clamp-1">{title}</h2>
 				<div className="flex items-center justify-between">
-					<span className="text-sm text-gray-600">
+					<span className="text-sm text-gray-600 dark:text-gray-300">
 						{formatDate(release_date)}{' '}
 					</span>
 					{vote_average !== 0 && (
@@ -41,7 +41,7 @@ const MobileCard = ({
 						/>
 					)}
 				</div>
-				<p className="text-pretty text-gray-800 line-clamp-2 pt-2">
+				<p className="text-pretty text-gray-800 line-clamp-2 pt-2 dark:text-gray-300">
 					{overview}
 				</p>
 			</div>

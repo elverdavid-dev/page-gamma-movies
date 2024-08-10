@@ -12,7 +12,7 @@ const GenresSection = async () => {
 					<Link
 						key={id}
 						href={`/genre/${id}?genreName=${name}`}
-						className="flex-shrink-0 text-gray-800 hover:text-white hover:bg-black transition-all py-2 px-5 rounded-full border border-gray-300"
+						className="flex-shrink-0 text-gray-800 hover:text-white hover:bg-black transition-all py-2 px-5 rounded-full border border-gray-300 dark:text-gray-300 dark:border-gray-700 dark:hover:border-white dark:hover:text-white"
 					>
 						{name}
 					</Link>

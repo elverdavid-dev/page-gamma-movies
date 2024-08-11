@@ -13,19 +13,25 @@ import {
 } from '@nextui-org/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import ThemeToggle from '@/modules/core/components/theme/theme-toggle'
-import SearchInput from './search-input'
+import SearchInput from '@/modules/core/components/layouts/header/search-input'
+import SearchInputPlaceholder from '@/modules/core/components/layouts/header/search-input-placeholder'
 
 const Navbar2 = () => {
+	//Hooks
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const pathName = usePathname()
+
 	const navLinks = [
 		{ name: 'Popular', path: '/popular' },
 		{ name: 'Now Playing', path: '/now-playing' },
 		{ name: 'Upcoming', path: '/upcoming' },
 		{ name: 'Top Rated', path: '/top-rated' },
 	]
+	const handleSearchAndCloseMenu = () => {
+		setIsMenuOpen(false)
+	}
 	return (
 		<Navbar
 			isMenuOpen={isMenuOpen}
@@ -45,7 +51,7 @@ const Navbar2 = () => {
 						<Link
 							href={path}
 							className={cn(
-								'text-lg md:text-base dark:text-gray-300 dark:hover:text-white',
+								'text-lg md:text-base dark:text-gray-300 hover:text-[#F0B90B] transition-all',
 								pathName === path && 'text-[#F0B90B] hover:text-[#F0B90B]',
 							)}
 						>
@@ -62,14 +68,16 @@ const Navbar2 = () => {
 				justify="end"
 			>
 				<NavbarItem className="hidden lg:flex">
-					<SearchInput />
+					<Suspense fallback={<SearchInputPlaceholder />}>
+						<SearchInput />
+					</Suspense>
 				</NavbarItem>
 				<NavbarItem>
 					<ThemeToggle />
 				</NavbarItem>
-				<NavbarItem className="hidden lg:flex">
+				{/* 	<NavbarItem className="hidden lg:flex">
 					<SignInButton />
-				</NavbarItem>
+				</NavbarItem> */}
 			</NavbarContent>
 
 			{/* Toggle mobile*/}
@@ -82,17 +90,21 @@ const Navbar2 = () => {
 
 			{/* Mobile navbar items */}
 			<NavbarMenu className="dark:bg-black pt-5 flex flex-col gap-y-5 items-center z-50">
+				<Suspense fallback={<SearchInputPlaceholder />}>
+					<SearchInput />
+				</Suspense>
 				{navLinks.map(({ name, path }) => (
 					<NavbarMenuItem key={`menuItem-${name}`}>
 						<Link
 							href={path}
+							onClick={handleSearchAndCloseMenu}
 							className="dark:text-gray-300 text-lg md:text-base"
 						>
 							{name}
 						</Link>
 					</NavbarMenuItem>
 				))}
-				<SignInButton />
+				{/* 	<SignInButton /> */}
 			</NavbarMenu>
 		</Navbar>
 	)

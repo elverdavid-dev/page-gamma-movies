@@ -1,11 +1,12 @@
 'use client'
+import PlacehoderImage from '@/modules/core/components/card/placeholder-image'
 import ImageWrapper from '@/modules/core/components/common/image-wrapper'
 import VoteAverage from '@/modules/core/components/vote-average'
 import { baseUrlImage } from '@/modules/core/utils/config'
 import { formatDate } from '@/modules/core/utils/format-date'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 import { formatRuntime } from '@/modules/movie/utils/format-runtime'
-import { Button } from '@nextui-org/react'
+import { Button, cn } from '@nextui-org/react'
 import {
 	Bookmark02Icon,
 	Calendar03Icon,
@@ -22,20 +23,25 @@ interface Props {
 	urlTrailer: string | undefined
 }
 const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
+	console.log(urlTrailer)
 	return (
 		<section className="static md:absolute px-2 md:px-0  md:container md:mx-auto  inset-0 z-10 md:flex md:gap-x-5 pt-16">
 			<div className="flex flex-col gap-y-3 items-center justify-center md:block pb-5 md:pb-0">
-				<ImageWrapper
-					src={`${baseUrlImage}/${movieDetails?.poster_path}`}
-					alt={movieDetails?.title}
-					width={305}
-					height={395}
-					className="object-cover w-[305px] h-[395px] z-30"
-				/>
+				{movieDetails?.poster_path ? (
+					<ImageWrapper
+						src={`${baseUrlImage}/${movieDetails?.poster_path}`}
+						alt={movieDetails?.title}
+						width={305}
+						height={395}
+						className="object-cover w-[305px] h-[395px] z-30"
+					/>
+				) : (
+					<PlacehoderImage className="w-[305px] h-[395px]" />
+				)}
 				<Button
-					href={urlTrailer}
-					disabled={!urlTrailer}
+					href={urlTrailer ?? ''}
 					as={Link}
+					isDisabled={!urlTrailer}
 					fullWidth
 					endContent={<PlayIcon size={18} strokeWidth={2} />}
 					className="mt-4 bg-[#F0B90B] text-gray-800"
@@ -53,10 +59,12 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 
 				{/* MovieMetaData */}
 				<div className="flex flex-wrap items-center gap-x-5 pt-3 text-gray-300">
-					<span className="flex items-center gap-x-1">
-						<Calendar03Icon size={18} strokeWidth={2} />
-						{formatDate(movieDetails?.release_date ?? '')}
-					</span>
+					{movieDetails?.release_date && (
+						<span className="flex items-center gap-x-1">
+							<Calendar03Icon size={18} strokeWidth={2} />
+							{formatDate(movieDetails?.release_date ?? '')}
+						</span>
+					)}
 					<div className="flex items-center gap-x-1 order-3 md:order-2">
 						<Tag01Icon size={18} strokeWidth={2} />
 						<span>
@@ -95,7 +103,12 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 								aria-label={`Vote average for ${movieDetails?.title} is ${movieDetails?.vote_average}`}
 							/>
 						)}
-						<span className="text-lg font-ibmPlexSans leading-tight">
+						<span
+							className={cn(
+								'text-lg font-ibmPlexSans leading-tight',
+								!movieDetails?.vote_average && 'hidden',
+							)}
+						>
 							Users <br /> score
 						</span>
 					</div>

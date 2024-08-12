@@ -3,6 +3,7 @@ import './globals.css'
 import { IbmPlexSans, Inter } from '@/fonts/fonts'
 import Navbar from '@/modules/core/components/layouts/header/navbar'
 import Provider from './providers'
+import Footer from '@/modules/core/components/layouts/footer/footer'
 
 const inter = Inter
 const ibmPlexSans = IbmPlexSans
@@ -22,6 +23,7 @@ export default function RootLayout({
 				<Provider>
 					<Navbar />
 					{children}
+					<Footer />
 				</Provider>
 			</body>
 		</html>

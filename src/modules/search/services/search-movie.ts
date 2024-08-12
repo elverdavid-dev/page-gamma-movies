@@ -1,8 +1,8 @@
 import type { MoviesResponse } from '@/modules/core/types/movies-response'
 import { apiKey, baseUrl } from '@/modules/core/utils/config'
 
-export const searchMovies = async (name: string) => {
-	const url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${name}&language=en-US&page=1`
+export const searchMovies = async (query: string, page = 1) => {
+	const url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=${page}&page_size=50`
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })
 		if (!response.ok) {
@@ -14,5 +14,3 @@ export const searchMovies = async (name: string) => {
 		console.error(error)
 	}
 }
-
-//search/movie?query=deadpool&include_adult=false&language=en-US&page=1

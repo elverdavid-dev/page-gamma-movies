@@ -1,15 +1,20 @@
-import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
+import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import PopularContainer from '@/modules/popular/components/popular-container'
+import { Suspense } from 'react'
 
-const PopularPage = async () => {
-	const movies = await getPopularMovies()
+interface Props {
+	searchParams: { page?: string }
+}
 
+const PopularPage = async ({ searchParams }: Props) => {
+	const page = Number(searchParams.page ?? 1)
 	return (
-		<MoviesGrid
-			movies={movies?.results ?? []}
-			title="Popular"
-			totalResults={movies?.total_results ?? 0}
-		/>
+		<Suspense
+			key={`key-${page}`}
+			fallback={<MoviesGridSkeleton label="Popular" />}
+		>
+			<PopularContainer page={page} />
+		</Suspense>
 	)
 }
 

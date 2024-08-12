@@ -1,14 +1,17 @@
-import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getTopRatedMovies } from '@/modules/home/services/get-top-reted-movies'
+import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import TopRatedContainer from '@/modules/top-rated/components/top-rated-container'
+import { Suspense } from 'react'
 
-const TopRatedPage = async () => {
-	const movies = await getTopRatedMovies()
+interface Props {
+	searchParams: { page?: number }
+}
+
+const TopRatedPage = async ({ searchParams }: Props) => {
+	const page = Number(searchParams.page ?? 1)
 	return (
-		<MoviesGrid
-			movies={movies?.results ?? []}
-			title="Top Rated"
-			totalResults={movies?.total_results ?? 0}
-		/>
+		<Suspense key={`key-${page}`} fallback={<MoviesGridSkeleton label='Top Rated' />}>
+			<TopRatedContainer page={page} />
+		</Suspense>
 	)
 }
 

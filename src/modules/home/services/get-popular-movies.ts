@@ -1,8 +1,8 @@
 import type { MoviesResponse } from '@/modules/core/types/movies-response'
 import { apiKey, baseUrl } from '@/modules/core/utils/config'
 
-export const getPopularMovies = async () => {
-	const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+export const getPopularMovies = async (page = 1) => {
+	const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`
 
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })

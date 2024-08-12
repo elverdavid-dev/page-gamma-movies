@@ -1,14 +1,17 @@
-import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getUpcomingMovies } from '@/modules/home/services/get-upcoming-movies'
+import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import UpcomingContainer from '@/modules/upcoming/components/upcoming-container'
+import { Suspense } from 'react'
 
-const UpcomingPage = async () => {
-	const movies = await getUpcomingMovies()
+interface Props {
+	searchParams: { page?: string }
+}
+
+const UpcomingPage = async ({ searchParams }: Props) => {
+	const page = Number(searchParams.page ?? 1)
 	return (
-		<MoviesGrid
-			movies={movies?.results ?? []}
-			title="Upcoming"
-			totalResults={movies?.total_results ?? 0}
-		/>
+		<Suspense key={`key-${page}`} fallback={<MoviesGridSkeleton label='Upcoming' />}>
+			<UpcomingContainer page={page} />
+		</Suspense>
 	)
 }
 

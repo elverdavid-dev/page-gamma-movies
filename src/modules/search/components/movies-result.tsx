@@ -1,21 +1,30 @@
 import MobileCard from '@/modules/core/components/card/mobile-card'
 import MovieCard from '@/modules/core/components/card/movie-card'
 import Link from 'next/link'
-import FilterSection from '@/modules/search/components/filter/filter-section'
 import NotFoundSeach from './not-found-search'
 import BackButton from '@/modules/core/components/common/back-button'
 import { formatNumber } from '@/modules/core/utils/format-number'
 import { searchMovies } from '../services/search-movie'
+import PaginationWrapper from '@/modules/core/components/common/pagination-wrapper'
+import { notFound } from 'next/navigation'
+import FilterSection from './filter/filter-section'
 
 interface Props {
 	query: string
+	page: number
 }
 
-const MoviesResult = async ({ query }: Props) => {
-	const movies = await searchMovies(query)
+const MoviesResult = async ({ query, page }: Props) => {
+	const movies = await searchMovies(query, page)
+
+	// Check if the requested page is greater than the total pages
+	if (page > (movies?.total_pages ?? 1)) {
+		// Redirect to 404 not found page
+		notFound()
+	}
 
 	return (
-		<section className="px-2 md:px-0  md:container md:mx-auto">
+		<section className="px-2 md:px-0  md:container md:mx-auto min-h-screen">
 			<div className="flex items-center justify-between ">
 				<BackButton path="/" label="Search" />
 				<span className="md:pr-5">
@@ -24,7 +33,7 @@ const MoviesResult = async ({ query }: Props) => {
 			</div>
 
 			<section className="mt-5 mx-2 lg:mx-3">
-				{/* <FilterSection /> */}
+				<FilterSection />
 				{movies?.total_results === 0 ? (
 					<NotFoundSeach />
 				) : (
@@ -65,6 +74,11 @@ const MoviesResult = async ({ query }: Props) => {
 					</section>
 				)}
 			</section>
+			<PaginationWrapper
+				total={movies?.total_pages ?? 0}
+				initialPage={1}
+				page={page}
+			/>
 		</section>
 	)
 }

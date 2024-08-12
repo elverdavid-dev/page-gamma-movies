@@ -32,6 +32,12 @@ const Navbar2 = () => {
 	const handleSearchAndCloseMenu = () => {
 		setIsMenuOpen(false)
 	}
+
+	const handleKeyDown = (e: KeyboardEvent) => {
+		if (e.key === 'Enter') {
+			setIsMenuOpen(false)
+		}
+	}
 	return (
 		<Navbar
 			isMenuOpen={isMenuOpen}
@@ -69,7 +75,7 @@ const Navbar2 = () => {
 			>
 				<NavbarItem className="hidden lg:flex">
 					<Suspense fallback={<SearchInputPlaceholder />}>
-						<SearchInput />
+						<SearchInput onKeyDown={() => handleKeyDown} />
 					</Suspense>
 				</NavbarItem>
 				<NavbarItem>

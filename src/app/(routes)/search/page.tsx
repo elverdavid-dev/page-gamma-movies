@@ -3,14 +3,19 @@ import MoviesResultSkeleton from '@/modules/search/components/skeleton/movies-re
 import { Suspense } from 'react'
 
 interface Props {
-	searchParams: { [key: string]: string | undefined }
+	searchParams: { q?: string; page?: string }
 }
 
 const SearchPage = async ({ searchParams }: Props) => {
 	const query = searchParams.q
+	const page = searchParams.page ?? 1
+
 	return (
-		<Suspense key={`search-${query}`} fallback={<MoviesResultSkeleton />}>
-			<MoviesResult query={query ?? ''} />
+		<Suspense
+			key={`search-${query}-${page}`}
+			fallback={<MoviesResultSkeleton />}
+		>
+			<MoviesResult query={query ?? ''} page={Number(page)} />
 		</Suspense>
 	)
 }

@@ -1,14 +1,19 @@
-import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getNowPlayingMovies } from '@/modules/home/services/get-now-playing-movies'
+import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import NowPlayingContainer from '@/modules/now-playing/components/now-playing-container'
+import { Suspense } from 'react'
 
-const NowPlayingPage = async () => {
-	const movies = await getNowPlayingMovies()
+interface Props {
+	searchParams: { page?: string }
+}
+const NowPlayingPage = async ({ searchParams }: Props) => {
+	const page = Number(searchParams.page ?? 1)
 	return (
-		<MoviesGrid
-			movies={movies?.results ?? []}
-			title="Now Playing"
-			totalResults={movies?.total_results ?? 0}
-		/>
+		<Suspense
+			key={`key-${page}`}
+			fallback={<MoviesGridSkeleton label="Now Playing" />}
+		>
+			<NowPlayingContainer page={page} />
+		</Suspense>
 	)
 }
 

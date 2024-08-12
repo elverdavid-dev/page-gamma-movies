@@ -13,17 +13,19 @@ const SearchInput = ({ ...props }: InputProps) => {
 
 	const query = searchParams.get('q') ?? ''
 
-	const params = new URLSearchParams(searchParams)
 	const handleSearch = useDebouncedCallback((value: string) => {
+		const params = new URLSearchParams(searchParams)
+
 		if (value) {
 			params.set('q', value)
+			params.delete('page')
 		}
 		router.replace(`/search?${params.toString()}`)
 	}, 400)
 
 	// Prefetch the search page
 	useEffect(() => {
-		router.prefetch("/search")
+		router.prefetch('/search')
 	}, [router])
 
 	return (

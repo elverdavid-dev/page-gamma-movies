@@ -1,4 +1,4 @@
-import MoviesSection from '@/modules/shared/components/movies-section'
+import MoviesSection from '@/modules/shared/components/movies/sections/movies-section'
 import { getTopRatedMovies } from '@/modules/shared/services/get-top-reted-movies'
 
 const TopRatedSection = async () => {

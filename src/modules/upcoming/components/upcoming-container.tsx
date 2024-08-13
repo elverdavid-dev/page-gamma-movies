@@ -1,5 +1,5 @@
 import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
-import MoviesGrid from '@/modules/shared/components/movies/movies-grid'
+import MoviesGrid from '@/modules/shared/components/movies/sections/movies-grid'
 import { getUpcomingMovies } from '@/modules/shared/services/get-upcoming-movies'
 import { notFound } from 'next/navigation'
 

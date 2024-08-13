@@ -1,4 +1,4 @@
-import MoviesGridSkeleton from '@/modules/shared/components/movies/movies-grid-skeleton'
+import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
 import NowPlayingContainer from '@/modules/now-playing/components/now-playing-container'
 import { Suspense } from 'react'
 

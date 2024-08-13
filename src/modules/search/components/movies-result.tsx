@@ -22,7 +22,6 @@ const MoviesResult = async ({ query, page }: Props) => {
 		notFound()
 	}
 
-	console.log(movies?.total_results)
 	return (
 		<section className="px-2 md:px-0  md:container md:mx-auto min-h-screen">
 			<div className="flex items-center justify-between ">

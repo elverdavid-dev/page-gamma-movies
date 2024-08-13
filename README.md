@@ -9,6 +9,9 @@
 - [Biome.js](https://biomejs.dev/) - Formatter and linter
 - [Hugeicons](https://hugeicons.com/) - Icon library
 
+> [!TIP]
+> This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This leads to more readable messages that are easy to follow when looking through the project history. 
+
 ## Project Structure
 
 the project follows a modular architecture organized as follows:
@@ -53,9 +56,6 @@ src/
 - core/: Houses shared components, services, and utilities used across multiple modules.
 
 - Other directories (e.g., home/, search/, movie/) contain feature-specific code.
-
-
-- app/: Next.js app directory for routing and pages.
 
 - (routes)/: Contains route-specific pages.
 

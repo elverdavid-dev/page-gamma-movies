@@ -1,4 +1,4 @@
-import Subtitle from '@/modules/core/components/common/subtitle'
+import Subtitle from '@/modules/shared/components/common/subtitle'
 import CardCast from '@/modules/movie/components/cast/card-cast'
 import { getCastMovie } from '@/modules/movie/services/get-cast-movie'
 

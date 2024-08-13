@@ -1,4 +1,4 @@
-import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import MoviesGridSkeleton from '@/modules/shared/components/movies/movies-grid-skeleton'
 import UpcomingContainer from '@/modules/upcoming/components/upcoming-container'
 import { Suspense } from 'react'
 
@@ -9,7 +9,10 @@ interface Props {
 const UpcomingPage = async ({ searchParams }: Props) => {
 	const page = Number(searchParams.page ?? 1)
 	return (
-		<Suspense key={`key-${page}`} fallback={<MoviesGridSkeleton label='Upcoming' />}>
+		<Suspense
+			key={`key-${page}`}
+			fallback={<MoviesGridSkeleton label="Upcoming" />}
+		>
 			<UpcomingContainer page={page} />
 		</Suspense>
 	)

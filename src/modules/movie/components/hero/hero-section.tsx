@@ -1,4 +1,4 @@
-import { baseUrlImage } from '@/modules/core/utils/config'
+import { baseUrlImage } from '@/modules/shared/utils/config'
 import MovieInfoHero from '@/modules/movie/components/hero/movie-info-hero'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 import { generateUrlTrailer } from '@/modules/movie/utils/generate-url-trailer'

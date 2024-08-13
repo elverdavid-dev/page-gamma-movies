@@ -1,4 +1,4 @@
-import { apiKey, baseUrl } from '@/modules/core/utils/config'
+import { apiKey, baseUrl } from '@/modules/shared/utils/config'
 import type { CastResponse } from '@/modules/movie/types/movie-cast'
 
 export const getCastMovie = async (idMovie: number) => {

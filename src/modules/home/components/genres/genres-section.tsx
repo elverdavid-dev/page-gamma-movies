@@ -1,4 +1,4 @@
-import Subtitle from '@/modules/core/components/common/subtitle'
+import Subtitle from '@/modules/shared/components/common/subtitle'
 import { getGenres } from '@/modules/home/services/get-genres'
 import Link from 'next/link'
 

@@ -1,4 +1,4 @@
-import type { Movie } from '@/modules/core/types/movie'
+import type { Movie } from '@/modules/shared/types/movie'
 
 // Interfaz para la colección a la que pertenece la película
 interface Collection {

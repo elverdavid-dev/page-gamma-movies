@@ -1,5 +1,5 @@
-import type { MoviesResponse } from '@/modules/core/types/movies-response'
-import { apiKey, baseUrl } from '@/modules/core/utils/config'
+import type { MoviesResponse } from '@/modules/shared/types/movies-response'
+import { apiKey, baseUrl } from '@/modules/shared/utils/config'
 
 export const getUpcomingMovies = async (page = 1) => {
 	const url = `${baseUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=${page}`

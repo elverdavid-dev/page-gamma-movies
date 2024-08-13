@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import notfoundSeach from '@/modules/core/assets/not-found-search.webp'
+import notfoundSeach from '@/modules/search/assets/not-found-search.webp'
 import { useSearchParams } from 'next/navigation'
 const NotFoundSeach = () => {
 	const searchParams = useSearchParams()
@@ -15,7 +15,7 @@ const NotFoundSeach = () => {
 				alt="Not found icon"
 				width={300}
 				height={300}
-				className="mx-auto"
+				className="mx-auto w-[200px] h-[200px] md:w-[300px] md:h-[300px] mt-10"
 			/>
 		</section>
 	)

@@ -1,5 +1,5 @@
-import MoviesSection from '@/modules/core/components/movies-section'
-import { getNowPlayingMovies } from '@/modules/home/services/get-now-playing-movies'
+import MoviesSection from '@/modules/shared/components/movies-section'
+import { getNowPlayingMovies } from '@/modules/shared/services/get-now-playing-movies'
 
 const NowPlayingSection = async () => {
 	const nowPlayingMovies = await getNowPlayingMovies()

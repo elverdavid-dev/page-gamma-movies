@@ -1,9 +1,9 @@
 'use client'
-import PlacehoderImage from '@/modules/core/components/card/placeholder-image'
-import ImageWrapper from '@/modules/core/components/common/image-wrapper'
-import VoteAverage from '@/modules/core/components/vote-average'
-import { baseUrlImage } from '@/modules/core/utils/config'
-import { formatDate } from '@/modules/core/utils/format-date'
+import PlacehoderImage from '@/modules/shared/components/card/placeholder-image'
+import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
+import VoteAverage from '@/modules/shared/components/vote-average'
+import { baseUrlImage } from '@/modules/shared/utils/config'
+import { formatDate } from '@/modules/shared/utils/format-date'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 import { formatRuntime } from '@/modules/movie/utils/format-runtime'
 import { Button, cn } from '@nextui-org/react'
@@ -109,7 +109,7 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 								!movieDetails?.vote_average && 'hidden',
 							)}
 						>
-							Users <br /> score
+							Users <br /> sshared
 						</span>
 					</div>
 					<div className="flex items-center gap-x-10 justify-end">

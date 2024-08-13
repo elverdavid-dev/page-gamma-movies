@@ -1,7 +1,7 @@
-import MobileCard from '@/modules/core/components/card/mobile-card'
-import MovieCard from '@/modules/core/components/card/movie-card'
-import BackButton from '@/modules/core/components/common/back-button'
-import { formatNumber } from '@/modules/core/utils/format-number'
+import MobileCard from '@/modules/shared/components/card/mobile-card'
+import MovieCard from '@/modules/shared/components/card/movie-card'
+import BackButton from '@/modules/shared/components/common/back-button'
+import { formatNumber } from '@/modules/shared/utils/format-number'
 import { getMoviesByGenres } from '@/modules/genre/services/get-movies-by-genres'
 import Link from 'next/link'
 

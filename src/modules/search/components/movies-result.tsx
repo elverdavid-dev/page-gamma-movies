@@ -1,13 +1,12 @@
-import MobileCard from '@/modules/core/components/card/mobile-card'
-import MovieCard from '@/modules/core/components/card/movie-card'
+import MobileCard from '@/modules/shared/components/card/mobile-card'
+import MovieCard from '@/modules/shared/components/card/movie-card'
 import Link from 'next/link'
 import NotFoundSeach from './not-found-search'
-import BackButton from '@/modules/core/components/common/back-button'
-import { formatNumber } from '@/modules/core/utils/format-number'
+import BackButton from '@/modules/shared/components/common/back-button'
+import { formatNumber } from '@/modules/shared/utils/format-number'
 import { searchMovies } from '../services/search-movie'
-import PaginationWrapper from '@/modules/core/components/common/pagination-wrapper'
+import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
 import { notFound } from 'next/navigation'
-import FilterSection from './filter/filter-section'
 
 interface Props {
 	query: string
@@ -23,6 +22,7 @@ const MoviesResult = async ({ query, page }: Props) => {
 		notFound()
 	}
 
+	console.log(movies?.total_results)
 	return (
 		<section className="px-2 md:px-0  md:container md:mx-auto min-h-screen">
 			<div className="flex items-center justify-between ">
@@ -33,7 +33,6 @@ const MoviesResult = async ({ query, page }: Props) => {
 			</div>
 
 			<section className="mt-5 mx-2 lg:mx-3">
-				<FilterSection />
 				{movies?.total_results === 0 ? (
 					<NotFoundSeach />
 				) : (

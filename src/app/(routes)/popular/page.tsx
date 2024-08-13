@@ -1,4 +1,4 @@
-import MoviesGridSkeleton from '@/modules/core/components/movies/movies-grid-skeleton'
+import MoviesGridSkeleton from '@/modules/shared/components/movies/movies-grid-skeleton'
 import PopularContainer from '@/modules/popular/components/popular-container'
 import { Suspense } from 'react'
 

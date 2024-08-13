@@ -1,10 +1,10 @@
 import MobileCard from '@/modules/shared/components/card/mobile-card'
 import MovieCard from '@/modules/shared/components/card/movie-card'
 import Link from 'next/link'
-import NotFoundSeach from './not-found-search'
+import NotFoundSeach from '@/modules/search/components/not-found-search'
 import BackButton from '@/modules/shared/components/common/back-button'
 import { formatNumber } from '@/modules/shared/utils/format-number'
-import { searchMovies } from '../services/search-movie'
+import { searchMovies } from '@/modules/search/services/search-movie'
 import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
 import { notFound } from 'next/navigation'
 

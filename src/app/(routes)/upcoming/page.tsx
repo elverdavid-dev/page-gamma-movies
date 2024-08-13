@@ -1,6 +1,12 @@
 import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
+import { createMetadata } from '@/modules/shared/utils/create-metadata'
 import UpcomingContainer from '@/modules/upcoming/components/upcoming-container'
 import { Suspense } from 'react'
+
+export const metadata = createMetadata({
+	title: 'Movies upcoming',
+	canonicalUrl: '/upcoming',
+})
 
 interface Props {
 	searchParams: { page?: string }

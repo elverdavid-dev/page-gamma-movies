@@ -3,13 +3,13 @@ import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
 import { baseUrlImage } from '@/modules/shared/utils/config'
 import { formatDate } from '@/modules/shared/utils/format-date'
 import VoteAverage from '@/modules/shared/components/vote-average'
-import PlacehoderImage from './placeholder-image'
+import PlacehoderImage from '@/modules/shared/components/card/placeholder-image'
 
 interface Props
 	extends Pick<
 		Movie,
 		'title' | 'poster_path' | 'release_date' | 'vote_average' | 'overview'
-	> { }
+	> {}
 
 const MobileCard = ({
 	title,

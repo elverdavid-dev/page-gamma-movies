@@ -1,6 +1,12 @@
 import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
+import { createMetadata } from '@/modules/shared/utils/create-metadata'
 import TopRatedContainer from '@/modules/top-rated/components/top-rated-container'
 import { Suspense } from 'react'
+
+export const metadata = createMetadata({
+	title: 'Movies top rated',
+	canonicalUrl: '/top-rated',
+})
 
 interface Props {
 	searchParams: { page?: number }

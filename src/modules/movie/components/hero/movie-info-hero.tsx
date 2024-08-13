@@ -23,7 +23,6 @@ interface Props {
 	urlTrailer: string | undefined
 }
 const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
-	console.log(urlTrailer)
 	return (
 		<section className="static md:absolute px-2 md:px-0  md:container md:mx-auto  inset-0 z-10 md:flex md:gap-x-5 pt-16">
 			<div className="flex flex-col gap-y-3 items-center justify-center md:block pb-5 md:pb-0">

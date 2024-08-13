@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Technical Test Inlaze
 
-## Getting Started
+## Technologies
 
-First, run the development server:
+- [Next.js 14](https://nextjs.org/) - React framework for production
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [NextUI](https://nextui.org/) - React UI library
+- [Biome.js](https://biomejs.dev/) - Formatter and linter
+- [Hugeicons](https://hugeicons.com/) - Icon library
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Structure
+
+the project follows a modular architecture organized as follows:
+
+```
+src/
+├── modules/
+│   ├── core/             # Shared core functionality
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
+│   │   └── utils/
+│   ├── home/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
+│   │   └── utils/
+│   ├── search/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
+│   │   └── utils/
+│   └── movie/
+│       ├── components/
+│       ├── services/
+│       ├── types/
+│       └── utils/
+└── app/
+    ├── (routes)/
+    │   ├── popular/
+    │   │   └── page.tsx
+    │   ├── search/
+    │   │   └── page.tsx
+    │   └── movie/
+    │       └── [id]/
+    │           └── page.tsx
+    ├── layout.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- modules/: Contains all feature-specific modules and the shared core.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- core/: Houses shared components, services, and utilities used across multiple modules.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Other directories (e.g., home/, search/, movie/) contain feature-specific code.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- app/: Next.js app directory for routing and pages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- (routes)/: Contains route-specific pages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> [!NOTE]
+> This architecture is particularly beneficial for large-scale applications or projects expected to grow significantly over time.

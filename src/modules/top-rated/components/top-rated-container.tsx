@@ -1,6 +1,6 @@
 import PaginationWrapper from "@/modules/core/components/common/pagination-wrapper"
 import MoviesGrid from "@/modules/core/components/movies/movies-grid"
-import { getTopRatedMovies } from "@/modules/home/services/get-top-reted-movies"
+import { getTopRatedMovies } from "@/modules/core/services/get-top-reted-movies"
 
 interface Props {
   page: number

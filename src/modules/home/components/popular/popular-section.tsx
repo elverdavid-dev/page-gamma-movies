@@ -1,5 +1,5 @@
 import MoviesSection from '@/modules/core/components/movies-section'
-import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
+import { getPopularMovies } from '@/modules/core/services/get-popular-movies'
 
 const PopularSection = async () => {
 	const popularMovies = await getPopularMovies()

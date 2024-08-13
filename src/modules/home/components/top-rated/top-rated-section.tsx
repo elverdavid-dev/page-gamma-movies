@@ -1,5 +1,5 @@
 import MoviesSection from '@/modules/core/components/movies-section'
-import { getTopRatedMovies } from '@/modules/home/services/get-top-reted-movies'
+import { getTopRatedMovies } from '@/modules/core/services/get-top-reted-movies'
 
 const TopRatedSection = async () => {
 	const topRatedMovies = await getTopRatedMovies()

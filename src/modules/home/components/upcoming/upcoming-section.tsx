@@ -1,5 +1,5 @@
 import MoviesSection from '@/modules/core/components/movies-section'
-import { getUpcomingMovies } from '@/modules/home/services/get-upcoming-movies'
+import { getUpcomingMovies } from '@/modules/core/services/get-upcoming-movies'
 
 const UpcomingSection = async () => {
 	const upcomingMovies = await getUpcomingMovies()

@@ -9,8 +9,8 @@
 - [Biome.js](https://biomejs.dev/) - Formatter and linter
 - [Hugeicons](https://hugeicons.com/) - Icon library
 
-> [!TIP]
-> This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This leads to more readable messages that are easy to follow when looking through the project history. 
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This leads to more readable messages that are easy to follow when looking through the project history. 
 
 ## Project Structure
 

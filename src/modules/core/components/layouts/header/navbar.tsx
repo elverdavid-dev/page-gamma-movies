@@ -35,7 +35,7 @@ const Navbar2 = () => {
 
 	const handleKeyDown = (e: KeyboardEvent) => {
 		if (e.key === 'Enter') {
-			setIsMenuOpen(false)
+			setIsMenuOpen(!isMenuOpen)
 		}
 	}
 	return (

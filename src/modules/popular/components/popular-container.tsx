@@ -1,6 +1,6 @@
 import PaginationWrapper from '@/modules/core/components/common/pagination-wrapper'
 import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getPopularMovies } from '@/modules/home/services/get-popular-movies'
+import { getPopularMovies } from '@/modules/core/services/get-popular-movies'
 import { notFound } from 'next/navigation'
 
 interface Props {

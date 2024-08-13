@@ -1,6 +1,6 @@
 import PaginationWrapper from "@/modules/core/components/common/pagination-wrapper"
 import MoviesGrid from "@/modules/core/components/movies/movies-grid"
-import { getUpcomingMovies } from "@/modules/home/services/get-upcoming-movies"
+import { getUpcomingMovies } from "@/modules/core/services/get-upcoming-movies"
 import { notFound } from "next/navigation"
 
 interface Props {

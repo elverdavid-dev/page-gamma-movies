@@ -1,15 +1,15 @@
-import type { Movie } from '@/modules/core/types/movie'
-import ImageWrapper from '@/modules/core/components/common/image-wrapper'
-import { baseUrlImage } from '@/modules/core/utils/config'
-import { formatDate } from '@/modules/core/utils/format-date'
-import VoteAverage from '@/modules/core/components/vote-average'
+import type { Movie } from '@/modules/shared/types/movie'
+import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
+import { baseUrlImage } from '@/modules/shared/utils/config'
+import { formatDate } from '@/modules/shared/utils/format-date'
+import VoteAverage from '@/modules/shared/components/vote-average'
 import PlacehoderImage from './placeholder-image'
 
 interface Props
 	extends Pick<
 		Movie,
 		'title' | 'poster_path' | 'release_date' | 'vote_average' | 'overview'
-	> {}
+	> { }
 
 const MobileCard = ({
 	title,

@@ -1,5 +1,5 @@
-import ImageWrapper from '@/modules/core/components/common/image-wrapper'
-import { baseUrlImage } from '@/modules/core/utils/config'
+import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
+import { baseUrlImage } from '@/modules/shared/utils/config'
 import type { CastMember } from '@/modules/movie/types/movie-cast'
 import { ImageNotFound01Icon } from 'hugeicons-react'
 

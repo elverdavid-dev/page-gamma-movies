@@ -1,6 +1,6 @@
 'use client'
-import Logo from '@/modules/core/components/common/logo'
-import SignInButton from '@/modules/core/components/layouts/header/sign-in-button'
+import Logo from '@/modules/shared/components/common/logo'
+import SignInButton from '@/modules/shared/components/layouts/header/sign-in-button'
 import {
 	cn,
 	Navbar,
@@ -14,9 +14,9 @@ import {
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Suspense, useState } from 'react'
-import ThemeToggle from '@/modules/core/components/theme/theme-toggle'
-import SearchInput from '@/modules/core/components/layouts/header/search-input'
-import SearchInputPlaceholder from '@/modules/core/components/layouts/header/search-input-placeholder'
+import ThemeToggle from '@/modules/shared/components/theme/theme-toggle'
+import SearchInput from '@/modules/shared/components/layouts/header/search-input'
+import SearchInputPlaceholder from '@/modules/shared/components/layouts/header/search-input-placeholder'
 
 const Navbar2 = () => {
 	//Hooks

@@ -1,6 +1,6 @@
 import { Skeleton } from '@nextui-org/react'
-import { createSkeletons } from '@/modules/core/utils/create-skeleton'
-import MovieCardSkeleton from '@/modules/core/components/card/skeleton/movie-card-skeleton'
+import { createSkeletons } from '@/modules/shared/utils/create-skeleton'
+import MovieCardSkeleton from '@/modules/shared/components/card/skeleton/movie-card-skeleton'
 
 const MovieSectionSkeleton = () => {
 	const skeleton = createSkeletons(8)

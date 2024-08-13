@@ -1,4 +1,4 @@
-import type { Movie } from '@/modules/core/types/movie'
+import type { Movie } from '@/modules/shared/types/movie'
 
 export interface MoviesResponse {
 	page: number

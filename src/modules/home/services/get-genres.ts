@@ -1,4 +1,4 @@
-import { apiKey, baseUrl } from '@/modules/core/utils/config'
+import { apiKey, baseUrl } from '@/modules/shared/utils/config'
 import type { GenresResponse } from '@/modules/home/types/genres'
 
 export const getGenres = async () => {

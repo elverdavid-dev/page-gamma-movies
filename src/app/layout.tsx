@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { IbmPlexSans, Inter } from '@/fonts/fonts'
-import Navbar from '@/modules/core/components/layouts/header/navbar'
+import Navbar from '@/modules/shared/components/layouts/header/navbar'
 import Provider from './providers'
-import Footer from '@/modules/core/components/layouts/footer/footer'
+import Footer from '@/modules/shared/components/layouts/footer/footer'
 
 const inter = Inter
 const ibmPlexSans = IbmPlexSans

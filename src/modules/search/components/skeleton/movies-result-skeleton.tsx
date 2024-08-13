@@ -1,7 +1,7 @@
-import MobilCardSkeleton from '@/modules/core/components/card/skeleton/mobile-card-skeleton'
-import MovieCardSkeleton from '@/modules/core/components/card/skeleton/movie-card-skeleton'
-import BackButton from '@/modules/core/components/common/back-button'
-import { createSkeletons } from '@/modules/core/utils/create-skeleton'
+import MobilCardSkeleton from '@/modules/shared/components/card/skeleton/mobile-card-skeleton'
+import MovieCardSkeleton from '@/modules/shared/components/card/skeleton/movie-card-skeleton'
+import BackButton from '@/modules/shared/components/common/back-button'
+import { createSkeletons } from '@/modules/shared/utils/create-skeleton'
 import { Skeleton } from '@nextui-org/react'
 
 const MoviesResultSkeleton = () => {

@@ -1,6 +1,6 @@
-import PaginationWrapper from '@/modules/core/components/common/pagination-wrapper'
-import MoviesGrid from '@/modules/core/components/movies/movies-grid'
-import { getNowPlayingMovies } from '@/modules/core/services/get-now-playing-movies'
+import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
+import MoviesGrid from '@/modules/shared/components/movies/movies-grid'
+import { getNowPlayingMovies } from '@/modules/shared/services/get-now-playing-movies'
 
 interface Props {
 	page: number

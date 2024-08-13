@@ -12,12 +12,7 @@ interface Props {
 const BackButton = ({ path, label }: Props) => {
 	return (
 		<div className="flex items-center gap-x-4 py-5">
-			<Tooltip
-				content="Back"
-				placement="bottom"
-				color="foreground"
-				showArrow
-			>
+			<Tooltip content="Back" placement="bottom" color="foreground" showArrow>
 				<Button href={path} as={Link} isIconOnly radius="lg" variant="flat">
 					<ArrowLeft01Icon className="text-gray-700 dark:text-gray-300" />
 					<span className="sr-only">Back</span>

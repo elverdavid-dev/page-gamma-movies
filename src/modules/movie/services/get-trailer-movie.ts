@@ -1,4 +1,4 @@
-import { apiKey, baseUrl } from '@/modules/core/utils/config'
+import { apiKey, baseUrl } from '@/modules/shared/utils/config'
 import type { MovieVideosResponse } from '@/modules/movie/types/movie-video'
 
 export const getTrailerMovie = async (idMovie: number) => {

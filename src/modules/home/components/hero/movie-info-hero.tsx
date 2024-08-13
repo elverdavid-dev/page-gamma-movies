@@ -1,5 +1,5 @@
-import VoteAverage from '@/modules/core/components/vote-average'
-import type { Movie } from '@/modules/core/types/movie'
+import VoteAverage from '@/modules/shared/components/vote-average'
+import type { Movie } from '@/modules/shared/types/movie'
 import { Bookmark02Icon, FavouriteIcon, Share08Icon } from 'hugeicons-react'
 import Link from 'next/link'
 

@@ -1,6 +1,5 @@
 'use client'
 import Logo from '@/modules/shared/components/common/logo'
-import SignInButton from '@/modules/shared/components/layouts/header/sign-in-button'
 import {
 	cn,
 	Navbar,
@@ -10,6 +9,7 @@ import {
 	NavbarMenu,
 	NavbarMenuItem,
 	NavbarMenuToggle,
+	Spinner,
 } from '@nextui-org/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -17,6 +17,14 @@ import { Suspense, useState } from 'react'
 import ThemeToggle from '@/modules/shared/components/theme/theme-toggle'
 import SearchInput from '@/modules/shared/components/layouts/header/search-input'
 import SearchInputPlaceholder from '@/modules/shared/components/layouts/header/search-input-placeholder'
+import {
+	ClerkLoaded,
+	ClerkLoading,
+	SignedIn,
+	SignedOut,
+	SignInButton,
+	UserButton,
+} from '@clerk/nextjs'
 
 const Navbar2 = () => {
 	//Hooks
@@ -29,6 +37,7 @@ const Navbar2 = () => {
 		{ name: 'Upcoming', path: '/upcoming' },
 		{ name: 'Top Rated', path: '/top-rated' },
 	]
+
 	const handleSearchAndCloseMenu = () => {
 		setIsMenuOpen(false)
 	}
@@ -73,17 +82,31 @@ const Navbar2 = () => {
 				className="items-center flex pl-16 lg:pl-0"
 				justify="end"
 			>
+				{/* Search input */}
 				<NavbarItem className="hidden lg:flex">
 					<Suspense fallback={<SearchInputPlaceholder />}>
 						<SearchInput onKeyDown={() => handleKeyDown} />
 					</Suspense>
 				</NavbarItem>
+				{/* Theme toggle */}
 				<NavbarItem>
 					<ThemeToggle />
 				</NavbarItem>
-				{/* 	<NavbarItem className="hidden lg:flex">
-					<SignInButton />
-				</NavbarItem> */}
+
+				{/* Auth buttons */}
+				<NavbarItem>
+					<ClerkLoading>
+						<Spinner size="sm" color="default" />
+					</ClerkLoading>
+					<ClerkLoaded>
+						<SignedOut>
+							<SignInButton mode="modal" />
+						</SignedOut>
+						<SignedIn>
+							<UserButton />
+						</SignedIn>
+					</ClerkLoaded>
+				</NavbarItem>
 			</NavbarContent>
 
 			{/* Toggle mobile*/}

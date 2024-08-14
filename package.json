@@ -11,6 +11,7 @@
     "check": "biome check --write ./src/"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.3.1",
     "@nextui-org/react": "^2.4.6",
     "framer-motion": "^11.3.21",
     "hugeicons-react": "^0.3.0",
@@ -19,6 +20,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "sonner": "^1.5.0",
     "swiper": "^11.1.9",
     "use-debounce": "^10.0.2"
   },

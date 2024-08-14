@@ -8,6 +8,7 @@
 - [NextUI](https://nextui.org/) - React UI library
 - [Biome.js](https://biomejs.dev/) - Formatter and linter
 - [Hugeicons](https://hugeicons.com/) - Icon library
+- [Clerk Auth](https://clerk.com/) - Clerk Auth
 
 
 This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This leads to more readable messages that are easy to follow when looking through the project history. 
@@ -58,6 +59,7 @@ src/
 - Other directories (e.g., home/, search/, movie/) contain feature-specific code.
 
 - (routes)/: Contains route-specific pages.
+<br/>
 
 > [!NOTE]
 > This architecture is particularly beneficial for large-scale applications or projects expected to grow significantly over time.

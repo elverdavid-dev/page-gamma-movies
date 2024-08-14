@@ -63,3 +63,10 @@ src/
 
 > [!NOTE]
 > This architecture is particularly beneficial for large-scale applications or projects expected to grow significantly over time.
+
+<br/>
+
+# API Documentation
+You can find the API documentation here (development).
+
+[View API Documentation](https://movies-api-production-c54e.up.railway.app/docs)

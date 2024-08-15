@@ -1,8 +1,8 @@
 import type { MoviesResponse } from '@/modules/shared/types/movies-response'
-import { apiKey, baseUrl } from '@/modules/shared/utils/config'
+import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 
 export const getTrendingMovies = async () => {
-	const url = `${baseUrl}/trending/movie/day?api_key=${apiKey}&language=en-US`
+	const url = `${baseUrlTmdb}/trending/movie/day?api_key=${apiKey}&language=en-US`
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })
 		if (!response.ok) {

@@ -1,8 +1,8 @@
-import { apiKey, baseUrl } from '@/modules/shared/utils/config'
+import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 import type { CastResponse } from '@/modules/movie/types/movie-cast'
 
 export const getCastMovie = async (idMovie: number) => {
-	const url = `${baseUrl}/movie/${idMovie}/credits?api_key=${apiKey}&language=en-US`
+	const url = `${baseUrlTmdb}/movie/${idMovie}/credits?api_key=${apiKey}&language=en-US`
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })
 		if (!response.ok) {

@@ -1,8 +1,8 @@
-import { apiKey, baseUrl } from '@/modules/shared/utils/config'
+import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 
 export const getMovieDetails = async (idMovie: number) => {
-	const url = `${baseUrl}/movie/${idMovie}?api_key=${apiKey}&language=en-US`
+	const url = `${baseUrlTmdb}/movie/${idMovie}?api_key=${apiKey}&language=en-US`
 
 	try {
 		const response = await fetch(url, { next: { revalidate: 60 } })

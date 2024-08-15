@@ -1,4 +1,4 @@
-export const apiKey = process.env.NEXT_PUBLIC_API_KEY
+export const apiKey = process.env.API_KEY
 export const baseUrlTmdb = process.env.BASE_URL_TMDB
 
 export const baseUrlImage = process.env.NEXT_PUBLIC_BASE_URL_IMAGE

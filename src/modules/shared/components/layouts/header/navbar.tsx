@@ -17,13 +17,13 @@ import { Suspense, useState } from 'react'
 import ThemeToggle from '@/modules/shared/components/theme/theme-toggle'
 import SearchInput from '@/modules/shared/components/layouts/header/search-input'
 import SearchInputPlaceholder from '@/modules/shared/components/layouts/header/search-input-placeholder'
+import UserButtonWrapper from '@/modules/shared/components/layouts/header/user-button-wrapper'
 import {
 	ClerkLoaded,
 	ClerkLoading,
 	SignedIn,
 	SignedOut,
 	SignInButton,
-	UserButton,
 } from '@clerk/nextjs'
 
 const Navbar2 = () => {
@@ -103,7 +103,7 @@ const Navbar2 = () => {
 							<SignInButton mode="modal" />
 						</SignedOut>
 						<SignedIn>
-							<UserButton />
+							<UserButtonWrapper />
 						</SignedIn>
 					</ClerkLoaded>
 				</NavbarItem>

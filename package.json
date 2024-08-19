@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.3.1",
+    "@clerk/themes": "^2.1.20",
     "@nextui-org/react": "^2.4.6",
     "framer-motion": "^11.3.21",
     "hugeicons-react": "^0.3.0",

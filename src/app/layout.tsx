@@ -5,6 +5,7 @@ import Provider from './providers'
 import Footer from '@/modules/shared/components/layouts/footer/footer'
 import { createMetadata } from '@/modules/shared/utils/create-metadata'
 import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
 
 export const metadata = createMetadata({
 	title: 'Discover the Best Movies and Upcoming Releases',
@@ -19,8 +20,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<ClerkProvider>
-			<html lang="en">
+		<ClerkProvider appearance={{ baseTheme: dark }}>
+			<html lang="en" suppressHydrationWarning>
 				<body className={`${inter.className} ${ibmPlexSans.variable}`}>
 					<Provider>
 						<Navbar />

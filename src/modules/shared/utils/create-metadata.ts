@@ -25,6 +25,14 @@ export const createMetadata = ({
 		alternates: {
 			canonical: `${siteUrl}${canonicalUrl ?? ''}`,
 		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+			},
+		},
 		openGraph: {
 			title: `${title} | Inlaze Movies`,
 			description: description ?? descriptionDefault,

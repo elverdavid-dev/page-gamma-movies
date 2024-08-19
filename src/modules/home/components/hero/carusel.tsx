@@ -9,6 +9,7 @@ import { baseUrlImage } from '@/modules/shared/utils/config'
 import MovieInfoHero from '@/modules/home/components/hero/movie-info-hero'
 import Link from 'next/link'
 import { Autoplay, Pagination } from 'swiper/modules'
+import { Image } from '@nextui-org/react'
 
 interface Props {
 	movies: Movie[] | undefined
@@ -26,11 +27,14 @@ const Carusel = ({ movies }: Props) => {
 			{movies?.map((movie) => (
 				<SwiperSlide key={movie.id} className="relative">
 					<Link href={`/movie/${movie.id}`}>
-						<img
+						<Image
 							src={`${baseUrlImage}/${movie.backdrop_path}`}
 							alt={movie.original_title}
-							height={150}
-							className="h-[569px] w-full object-cover"
+							radius="none"
+							width={1355}
+							height={570}
+							className="h-[570px] w-full object-cover"
+							loading="eager"
 						/>
 
 						{/* Black gradient overlay for better text readability */}

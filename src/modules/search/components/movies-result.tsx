@@ -5,6 +5,7 @@ import NotFoundSeach from '@/modules/search/components/not-found-search'
 import BackButton from '@/modules/shared/components/common/back-button'
 import { formatNumber } from '@/modules/shared/utils/format-number'
 import { searchMovies } from '@/modules/search/services/search-movie'
+import FilterSection from '@/modules/search/components/filter/filter-section'
 import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
 import { notFound } from 'next/navigation'
 
@@ -30,7 +31,7 @@ const MoviesResult = async ({ query, page }: Props) => {
 					<strong>{formatNumber(movies?.total_results)}</strong> Total movies
 				</span>
 			</div>
-
+			<FilterSection />
 			<section className="mt-5 mx-2 lg:mx-3">
 				{movies?.total_results === 0 ? (
 					<NotFoundSeach />

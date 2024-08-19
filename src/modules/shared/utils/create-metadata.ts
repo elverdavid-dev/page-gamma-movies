@@ -34,7 +34,10 @@ export const createMetadata = ({
 			},
 		},
 		openGraph: {
-			title: `${title} | Inlaze Movies`,
+			title: {
+				template: '%s | Inlaze Movies',
+				default: 'Inlaze Movies',
+			},
 			description: description ?? descriptionDefault,
 			url: `${siteUrl}/${canonicalUrl}`,
 			siteName,

@@ -1,8 +1,13 @@
+import FavoriteContainer from '@/modules/favorite/components/favorite-container'
+import { Suspense } from 'react'
+
 const FavoritePage = async () => {
 	return (
-		<div className="flex items-center justify-center mt-20">
-			<h1>Favorite page in develoment</h1>
-		</div>
+		<>
+			<Suspense fallback={<span>loading...</span>}>
+				<FavoriteContainer />
+			</Suspense>
+		</>
 	)
 }
 

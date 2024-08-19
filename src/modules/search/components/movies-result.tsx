@@ -1,12 +1,12 @@
+import FilterSection from '@/modules/search/components/filter/filter-section'
+import NotFoundSeach from '@/modules/search/components/not-found-search'
+import { searchMovies } from '@/modules/search/services/search-movie'
 import MobileCard from '@/modules/shared/components/card/mobile-card'
 import MovieCard from '@/modules/shared/components/card/movie-card'
-import Link from 'next/link'
-import NotFoundSeach from '@/modules/search/components/not-found-search'
 import BackButton from '@/modules/shared/components/common/back-button'
-import { formatNumber } from '@/modules/shared/utils/format-number'
-import { searchMovies } from '@/modules/search/services/search-movie'
-import FilterSection from '@/modules/search/components/filter/filter-section'
 import PaginationWrapper from '@/modules/shared/components/common/pagination-wrapper'
+import { formatNumber } from '@/modules/shared/utils/format-number'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 interface Props {

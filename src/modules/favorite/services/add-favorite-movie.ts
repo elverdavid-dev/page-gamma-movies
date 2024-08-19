@@ -1,13 +1,13 @@
 'use server'
+import type { MovieInfo } from '@/modules/shared/types/movie-info'
 import { cookies } from 'next/headers'
-import type { FavoriteMovie } from '@/modules/favorite/types/favorite-movie'
 
 interface MessageResponse {
 	message: string
 }
 
 const baseUrl = 'http://localhost:8080'
-export const addFavoriteMovies = async (favoriteMovie: FavoriteMovie) => {
+export const addFavoriteMovies = async (favoriteMovie: MovieInfo) => {
 	try {
 		const response = await fetch(`${baseUrl}/favorite-movies`, {
 			method: 'POST',

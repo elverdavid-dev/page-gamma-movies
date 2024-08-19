@@ -1,17 +1,17 @@
 import MobileCard from '@/modules/shared/components/card/mobile-card'
 import MovieCard from '@/modules/shared/components/card/movie-card'
 import BackButton from '@/modules/shared/components/common/back-button'
+import type { Movie } from '@/modules/shared/types/movie'
 import { formatNumber } from '@/modules/shared/utils/format-number'
 import Link from 'next/link'
-import type { Movie } from '@/modules/shared/types/movie'
 
-interface MoviesGridProps {
+interface Props {
 	movies: Movie[]
 	title: string
 	totalResults: number
 }
 
-const MoviesGrid = ({ movies, title, totalResults }: MoviesGridProps) => {
+const MoviesGrid = ({ movies, title, totalResults }: Props) => {
 	return (
 		<section className="mt-5 mx-2 lg:mx-3">
 			<div className="flex items-center justify-between ">

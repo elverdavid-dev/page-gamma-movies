@@ -1,21 +1,16 @@
+import PlacehoderImage from '@/modules/shared/components/card/placeholder-image'
 import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
 import VoteAverage from '@/modules/shared/components/vote-average'
-import type { Movie } from '@/modules/shared/types/movie'
+import type { MovieInfo } from '@/modules/shared/types/movie-info'
 import { baseUrlImage } from '@/modules/shared/utils/config'
 import { formatDate } from '@/modules/shared/utils/format-date'
-import PlacehoderImage from '@/modules/shared/components/card/placeholder-image'
-interface Props
-	extends Pick<
-		Movie,
-		'title' | 'poster_path' | 'release_date' | 'vote_average'
-	> {}
 
 const MovieCard = ({
 	title,
 	poster_path,
 	release_date,
 	vote_average,
-}: Props) => {
+}: MovieInfo) => {
 	return (
 		<article className="flex-shrink-0 w-[150px]">
 			<div className="relative">
@@ -33,7 +28,7 @@ const MovieCard = ({
 
 				{vote_average !== 0 && (
 					<VoteAverage
-						voteAverage={vote_average}
+						voteAverage={vote_average ?? 0}
 						size="sm"
 						aria-label={`Vote average for ${title} is ${vote_average}`}
 						className="absolute -bottom-3 left-3 text-white bg-black rounded-full z-30"

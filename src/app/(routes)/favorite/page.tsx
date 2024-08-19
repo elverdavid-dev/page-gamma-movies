@@ -1,8 +1,14 @@
+import FavoriteContainer from '@/modules/favorite/components/favorite-container'
+import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
+import { Suspense } from 'react'
+
 const FavoritePage = async () => {
 	return (
-		<div className="flex items-center justify-center mt-20">
-			<h1>Favorite page in develoment</h1>
-		</div>
+		<>
+			<Suspense fallback={<MoviesGridSkeleton label='Favorite' />}>
+				<FavoriteContainer />
+			</Suspense>
+		</>
 	)
 }
 

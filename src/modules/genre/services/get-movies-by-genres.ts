@@ -5,7 +5,7 @@ export const getMoviesByGenres = async (idMovie: number, page = 1) => {
 	const url = `${baseUrlTmdb}/discover/movie?api_key=${apiKey}&with_genres=${idMovie}&page=${page}`
 
 	try {
-		const response = await fetch(url, { next: { revalidate: 60 } })
+		const response = await fetch(url, { next: { revalidate: 300 } })
 		if (!response.ok) {
 			throw new Error('Failed to fetch data')
 		}

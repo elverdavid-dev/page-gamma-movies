@@ -4,7 +4,7 @@ import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 export const searchMovies = async (query: string, page = 1) => {
 	const url = `${baseUrlTmdb}/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=${page}&page_size=50`
 	try {
-		const response = await fetch(url, { next: { revalidate: 60 } })
+		const response = await fetch(url, { next: { revalidate: 300 } })
 		if (!response.ok) {
 			throw new Error('Failed to fetch data')
 		}

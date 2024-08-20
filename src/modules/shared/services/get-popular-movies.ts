@@ -5,7 +5,7 @@ export const getPopularMovies = async (page = 1) => {
 	const url = `${baseUrlTmdb}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`
 
 	try {
-		const response = await fetch(url, { next: { revalidate: 60 } })
+		const response = await fetch(url, { next: { revalidate: 300 } })
 		if (!response.ok) {
 			throw new Error('Failed to fetch data')
 		}

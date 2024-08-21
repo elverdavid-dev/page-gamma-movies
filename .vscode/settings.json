@@ -8,6 +8,7 @@
     "now-playing",
     "upcoming",
     "top-rated",
-    "favorite"
+    "favorite",
+    "search"
   ]
 }

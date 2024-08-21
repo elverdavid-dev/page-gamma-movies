@@ -4,7 +4,7 @@ import { createMetadata } from '@/modules/shared/utils/create-metadata'
 import { Suspense } from 'react'
 
 interface Props {
-	searchParams: { q?: string; page?: string }
+	searchParams: { q?: string; page?: string; type?: string }
 }
 
 export const generateMetadata = ({ searchParams }: Props) => {
@@ -15,15 +15,16 @@ export const generateMetadata = ({ searchParams }: Props) => {
 }
 
 const SearchPage = async ({ searchParams }: Props) => {
-	const query = searchParams.q
-	const page = searchParams.page ?? 1
+	const query = searchParams.q ?? ""
+	const page = Number(searchParams.page ?? 1)
+	const type = searchParams.type ?? "movie"
 
 	return (
 		<Suspense
-			key={`search-${query}-${page}`}
+			key={`key-${query}-${page}-${type}`}
 			fallback={<MoviesResultSkeleton />}
 		>
-			<MoviesResult query={query ?? ''} page={Number(page)} />
+			<MoviesResult query={query} page={page} type={type} />
 		</Suspense>
 	)
 }

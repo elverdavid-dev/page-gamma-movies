@@ -12,10 +12,11 @@ import { notFound } from 'next/navigation'
 interface Props {
 	query: string
 	page: number
+	type: string
 }
 
-const MoviesResult = async ({ query, page }: Props) => {
-	const movies = await searchMovies(query, page)
+const MoviesResult = async ({ query, page, type }: Props) => {
+	const movies = await searchMovies(query, page, type)
 
 	// Check if the requested page is greater than the total pages
 	if (page > (movies?.total_pages ?? 1)) {

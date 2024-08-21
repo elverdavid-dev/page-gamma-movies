@@ -1,15 +1,15 @@
 'use server'
 import type { MovieInfo } from '@/modules/shared/types/movie-info'
+import { baseUrlApi } from '@/modules/shared/utils/config'
 import { cookies } from 'next/headers'
 
 interface MessageResponse {
 	message: string
 }
 
-const baseUrl = 'http://localhost:8080'
 export const addFavoriteMovies = async (favoriteMovie: MovieInfo) => {
 	try {
-		const response = await fetch(`${baseUrl}/favorite-movies`, {
+		const response = await fetch(`${baseUrlApi}/favorite-movies`, {
 			method: 'POST',
 			headers: {
 				Cookie: cookies().toString(),

@@ -25,14 +25,13 @@ const DetailsGenresPage = async ({ params, searchParams }: Props) => {
 	return (
 		<Suspense
 			key={`key-${page}`}
-			fallback={<MoviesGridSkeleton label={genreName ?? "Genre"} />}
+			fallback={<MoviesGridSkeleton label={genreName ?? 'Genre'} />}
 		>
 			<GenreContainer
 				idMovie={Number(idMovie)}
 				genreName={genreName}
 				page={page}
 			/>
-
 		</Suspense>
 	)
 }

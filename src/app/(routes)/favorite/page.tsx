@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 const FavoritePage = async () => {
 	return (
 		<>
-			<Suspense fallback={<MoviesGridSkeleton label='Favorite' />}>
+			<Suspense fallback={<MoviesGridSkeleton label="Favorite" />}>
 				<FavoriteContainer />
 			</Suspense>
 		</>

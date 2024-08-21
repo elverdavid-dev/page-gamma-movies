@@ -1,9 +1,9 @@
 'use client'
 
 import { NextUIProvider } from '@nextui-org/react'
-import type { ReactNode } from 'react'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import type { ReactNode } from 'react'
 
 interface Props {
 	children: ReactNode

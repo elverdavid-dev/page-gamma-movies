@@ -17,7 +17,6 @@ interface Props {
 
 const MoviesResult = async ({ query, page, type }: Props) => {
 	const movies = await searchMovies(query, page, type)
-
 	// Check if the requested page is greater than the total pages
 	if (page > (movies?.total_pages ?? 1)) {
 		// Redirect to 404 not found page
@@ -46,14 +45,16 @@ const MoviesResult = async ({ query, page, type }: Props) => {
 								release_date,
 								vote_average,
 								overview,
+								name,
+								first_air_date
 							}) => (
-								<Link key={id} href={`/movie/${id}`}>
+								<Link key={id} href={`/${type}/${id}`}>
 									{/* Mobile Section */}
 									<div className="md:hidden">
 										<MobileCard
-											title={title}
+											title={title ?? name}
 											poster_path={poster_path}
-											release_date={release_date}
+											release_date={release_date ?? first_air_date}
 											vote_average={vote_average}
 											overview={overview}
 										/>
@@ -62,9 +63,9 @@ const MoviesResult = async ({ query, page, type }: Props) => {
 									{/* Desktop section */}
 									<div className="hidden md:block">
 										<MovieCard
-											title={title}
+											title={title ?? name}
 											poster_path={poster_path}
-											release_date={release_date}
+											release_date={release_date ?? first_air_date}
 											vote_average={vote_average}
 										/>
 									</div>

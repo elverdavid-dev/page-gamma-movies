@@ -15,9 +15,9 @@ export const generateMetadata = ({ searchParams }: Props) => {
 }
 
 const SearchPage = async ({ searchParams }: Props) => {
-	const query = searchParams.q ?? ""
+	const query = searchParams.q ?? ''
 	const page = Number(searchParams.page ?? 1)
-	const type = searchParams.type ?? "movie"
+	const type = searchParams.type ?? 'movie'
 
 	return (
 		<Suspense

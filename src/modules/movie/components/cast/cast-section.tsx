@@ -1,6 +1,6 @@
-import Subtitle from '@/modules/shared/components/common/subtitle'
 import CardCast from '@/modules/movie/components/cast/card-cast'
 import { getCastMovie } from '@/modules/movie/services/get-cast-movie'
+import Subtitle from '@/modules/shared/components/common/subtitle'
 
 interface Props {
 	idMovie: number

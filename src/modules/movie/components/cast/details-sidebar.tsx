@@ -1,6 +1,6 @@
-import Subtitle from '@/modules/shared/components/common/subtitle'
 import type { Genre } from '@/modules/home/types/genres'
 import { formatCurrency } from '@/modules/movie/utils/format-currency'
+import Subtitle from '@/modules/shared/components/common/subtitle'
 
 interface Props {
 	genres?: Genre[]

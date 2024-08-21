@@ -1,7 +1,7 @@
 'use client'
 
-import { Search01Icon } from 'hugeicons-react'
 import { Input } from '@nextui-org/react'
+import { Search01Icon } from 'hugeicons-react'
 
 const SearchInputPlaceholder = () => {
 	return (

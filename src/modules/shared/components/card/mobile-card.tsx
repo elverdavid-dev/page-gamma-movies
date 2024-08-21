@@ -3,7 +3,7 @@ import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
 import VoteAverage from '@/modules/shared/components/vote-average'
 import type { MovieInfo } from '@/modules/shared/types/movie-info'
 import { baseUrlImage } from '@/modules/shared/utils/config'
-import { formatDate } from '@/modules/shared/utils/format-date'
+import { formatDate } from '@/modules/shared/utils/date-helper'
 
 const MobileCard = ({
 	title,

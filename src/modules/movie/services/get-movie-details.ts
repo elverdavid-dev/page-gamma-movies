@@ -1,8 +1,13 @@
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 
-export const getMovieDetails = async (idMovie: number) => {
-	const url = `${baseUrlTmdb}/movie/${idMovie}?api_key=${apiKey}&language=en-US`
+interface Params {
+	id_movie: number
+	type?: string
+}
+
+export const getDetails = async ({ id_movie, type = 'movie' }: Params) => {
+	const url = `${baseUrlTmdb}/${type}/${id_movie}?api_key=${apiKey}&language=en-US`
 
 	try {
 		const response = await fetch(url, { next: { revalidate: 300 } })

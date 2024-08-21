@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import MovieInfoHero from '@/modules/home/components/hero/movie-info-hero'
 import type { Movie } from '@/modules/shared/types/movie'
 import { baseUrlImage } from '@/modules/shared/utils/config'
-import MovieInfoHero from '@/modules/home/components/hero/movie-info-hero'
+import { Image } from '@nextui-org/react'
 import Link from 'next/link'
 import { Autoplay, Pagination } from 'swiper/modules'
-import { Image } from '@nextui-org/react'
 
 interface Props {
 	movies: Movie[] | undefined

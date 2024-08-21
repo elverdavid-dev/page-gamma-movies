@@ -1,5 +1,5 @@
-import { baseurlYoutube } from '@/modules/shared/utils/config'
 import { getTrailerMovie } from '@/modules/movie/services/get-trailer-movie'
+import { baseurlYoutube } from '@/modules/shared/utils/config'
 
 export const generateUrlTrailer = async (idMovie: number) => {
 	try {

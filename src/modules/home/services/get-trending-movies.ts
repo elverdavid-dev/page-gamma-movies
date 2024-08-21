@@ -4,7 +4,7 @@ import { apiKey, baseUrlTmdb } from '@/modules/shared/utils/config'
 export const getTrendingMovies = async () => {
 	const url = `${baseUrlTmdb}/trending/movie/day?api_key=${apiKey}&language=en-US`
 	try {
-		const response = await fetch(url, { next: { revalidate: 60 } })
+		const response = await fetch(url, { next: { revalidate: 300 } })
 		if (!response.ok) {
 			throw new Error('Failed to fetch data')
 		}

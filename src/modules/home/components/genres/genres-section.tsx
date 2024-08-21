@@ -1,5 +1,5 @@
-import Subtitle from '@/modules/shared/components/common/subtitle'
 import { getGenres } from '@/modules/home/services/get-genres'
+import Subtitle from '@/modules/shared/components/common/subtitle'
 import Link from 'next/link'
 
 const GenresSection = async () => {

@@ -1,14 +1,14 @@
-import { baseUrlImage } from '@/modules/shared/utils/config'
 import MovieInfoHero from '@/modules/movie/components/hero/movie-info-hero'
 import type { MovieDetail } from '@/modules/movie/types/movie-details'
 import { generateUrlTrailer } from '@/modules/movie/utils/generate-url-trailer'
+import { baseUrlImage } from '@/modules/shared/utils/config'
 
 interface Props {
 	id: number
 	movieDetails: MovieDetail | undefined
 }
 
-const HeroSection = async ({ id, movieDetails }: Props) => {
+const HeroSectionMovie = async ({ id, movieDetails }: Props) => {
 	const urlTrailer = await generateUrlTrailer(Number(id))
 	return (
 		<section className="relative">
@@ -30,4 +30,4 @@ const HeroSection = async ({ id, movieDetails }: Props) => {
 	)
 }
 
-export default HeroSection
+export default HeroSectionMovie

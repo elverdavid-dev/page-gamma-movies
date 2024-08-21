@@ -13,11 +13,11 @@ const MoviesResultSkeleton = () => {
 				<Skeleton className="w-20 h-4 rounded-full" />
 			</div>
 			{/* Filter skeleton */}
-			{/*    <div className="flex items-center gap-x-2 mt-6">
-        <Skeleton className="w-[110px] h-[35px] rounded-2xl" />
-        <Skeleton className="w-[80px] h-[35px] rounded-2xl" />
-        <Skeleton className="w-[65px] h-[35px] rounded-2xl" />
-      </div> */}
+			<div className="flex items-center gap-x-2 mt-6">
+				<Skeleton className="w-[110px] h-[35px] rounded-2xl" />
+				<Skeleton className="w-[80px] h-[35px] rounded-2xl" />
+				<Skeleton className="w-[65px] h-[35px] rounded-2xl" />
+			</div>
 			<section className="flex flex-col gap-y-5 md:grid md:grid-cols-5 md:gap-y-10 lg:grid-cols-8 mt-5">
 				{skeleton.map(({ id }) => (
 					<section key={id}>

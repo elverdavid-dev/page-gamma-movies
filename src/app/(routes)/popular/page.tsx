@@ -1,7 +1,7 @@
-import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
 import PopularContainer from '@/modules/popular/components/popular-container'
-import { Suspense } from 'react'
+import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
 import { createMetadata } from '@/modules/shared/utils/create-metadata'
+import { Suspense } from 'react'
 
 export const metadata = createMetadata({
 	title: 'Movies popular',

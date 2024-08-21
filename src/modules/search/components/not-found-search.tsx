@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image'
 import notfoundSeach from '@/modules/search/assets/not-found-search.webp'
+import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 const NotFoundSeach = () => {
 	const searchParams = useSearchParams()

@@ -14,9 +14,8 @@ const FilterSection = () => {
 		const params = new URLSearchParams(searchParams)
 		params.set('type', e.target.value)
 		router.replace(`${pathName}?${params.toString()}`)
-		console.log(e.target.value)
 	}
-	const type = searchParams.get("type") ?? "movie"
+	const type = searchParams.get('type') ?? 'movie'
 	return (
 		<section className="flex items-center gap-x-3">
 			<Button variant="bordered">
@@ -28,10 +27,10 @@ const FilterSection = () => {
 				defaultSelectedKeys={[type]}
 				className="w-32"
 				onChange={handleFilter}
-				aria-label='select type movies'
+				aria-label="select type movies"
 			>
 				<SelectItem key="movie">Movies</SelectItem>
-				<SelectItem key="tv">Tv Series</SelectItem>
+				<SelectItem key="tv">Tv Show</SelectItem>
 			</Select>
 		</section>
 	)

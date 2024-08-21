@@ -1,11 +1,10 @@
 'use client'
-import type { MovieDetail } from '@/modules/movie/types/movie-details'
-import { formatRuntime } from '@/modules/movie/utils/format-runtime'
+import type { Genre } from '@/modules/home/types/genres'
 import PlacehoderImage from '@/modules/shared/components/card/placeholder-image'
 import ImageWrapper from '@/modules/shared/components/common/image-wrapper'
 import VoteAverage from '@/modules/shared/components/vote-average'
 import { baseUrlImage } from '@/modules/shared/utils/config'
-import { formatDate, getYear } from '@/modules/shared/utils/date-helper'
+import { formatDate } from '@/modules/shared/utils/date-helper'
 import { Button, cn } from '@nextui-org/react'
 import {
 	Bookmark02Icon,
@@ -19,19 +18,33 @@ import {
 import Link from 'next/link'
 
 interface Props {
-	movieDetails?: MovieDetail
 	urlTrailer?: string
+	poster_path?: string
+	name?: string
+	first_air_date?: string
+	genres?: Genre[]
+	number_of_episodes?: number
+	vote_average?: number
+	overview?: string
 }
-const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
-	const formattedDate = formatDate(movieDetails?.release_date ?? '')
-	const year = getYear(movieDetails?.release_date ?? '')
+
+const TvDetailsHero = ({
+	urlTrailer,
+	first_air_date,
+	genres,
+	name,
+	number_of_episodes,
+	overview,
+	poster_path,
+	vote_average,
+}: Props) => {
 	return (
 		<section className="static md:absolute px-2 md:px-0  md:container md:mx-auto  inset-0 z-10 md:flex md:gap-x-5 pt-16">
 			<div className="flex flex-col gap-y-3 items-center justify-center md:block pb-5 md:pb-0">
-				{movieDetails?.poster_path ? (
+				{poster_path ? (
 					<ImageWrapper
-						src={`${baseUrlImage}/${movieDetails?.poster_path}`}
-						alt={movieDetails?.title}
+						src={`${baseUrlImage}/${poster_path}`}
+						alt={name}
 						width={305}
 						height={395}
 						className="object-cover w-[305px] h-[395px] z-30"
@@ -53,31 +66,23 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 				</Button>
 			</div>
 			<div className="text-white md:w-3/4">
-				{/* Title */}
+				{/* name */}
 				<h1 className="text-3xl md:text-5xl font-ibmPlexSans text-balance">
-					{movieDetails?.title}
-
-					{year && <span className="pl-3 text-white/80">({year})</span>}
+					{name}{' '}
 				</h1>
 
 				{/* MovieMetaData */}
 				<div className="flex flex-wrap items-center gap-x-5 pt-3 text-gray-300">
-					{movieDetails?.release_date && (
+					{first_air_date && (
 						<span className="flex items-center gap-x-1">
 							<Calendar03Icon size={18} strokeWidth={2} />
-							{formattedDate}
+							{formatDate(first_air_date ?? '')}
 						</span>
 					)}
 					<div className="flex items-center gap-x-1 order-3 md:order-2">
 						<Tag01Icon size={18} strokeWidth={2} />
-						<span>
-							{movieDetails?.genres.map(({ name }) => name).join(', ')}
-						</span>
+						<span>{genres?.map(({ name }) => name).join(', ')}</span>
 					</div>
-					<span className="flex items-center gap-x-1 order-2 md:order-3">
-						<Clock01Icon size={18} strokeWidth={2} />
-						{formatRuntime(movieDetails?.runtime ?? 0)}
-					</span>
 				</div>
 
 				{/* Overview */}
@@ -85,31 +90,29 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 					<h2 className="text-3xl font-ibmPlexSans text-white pb-5">
 						Overview
 					</h2>
-					<p className="text-lg text-gray-300 text-pretty">
-						{movieDetails?.overview}{' '}
-					</p>
+					<p className="text-lg text-gray-300 text-pretty">{overview} </p>
 				</div>
 
 				<section className="flex items-center justify-between mt-16 pb-5 md:pb-0">
 					<div className="flex items-center gap-x-2">
 						{/* Vote Average*/}
 
-						{movieDetails?.vote_average !== 0 && (
+						{vote_average !== 0 && (
 							<VoteAverage
-								voteAverage={movieDetails?.vote_average ?? 0}
+								voteAverage={vote_average ?? 0}
 								size="lg"
 								classNames={{
 									svg: 'w-20 h-20 drop-shadow-md',
 									track: 'stroke-white/10',
 									value: 'text-xl font-semibold text-white',
 								}}
-								aria-label={`Vote average for ${movieDetails?.title} is ${movieDetails?.vote_average}`}
+								aria-label={`Vote average for ${name} is ${vote_average}`}
 							/>
 						)}
 						<span
 							className={cn(
 								'text-lg font-ibmPlexSans leading-tight',
-								!movieDetails?.vote_average && 'hidden',
+								!vote_average && 'hidden',
 							)}
 						>
 							Users <br /> score
@@ -146,4 +149,4 @@ const MovieInfoHero = ({ movieDetails, urlTrailer }: Props) => {
 	)
 }
 
-export default MovieInfoHero
+export default TvDetailsHero

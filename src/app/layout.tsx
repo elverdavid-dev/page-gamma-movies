@@ -1,11 +1,11 @@
 import './globals.css'
 import { IbmPlexSans, Inter } from '@/fonts/fonts'
-import Navbar from '@/modules/shared/components/layouts/header/navbar'
-import Provider from './providers'
 import Footer from '@/modules/shared/components/layouts/footer/footer'
+import Navbar from '@/modules/shared/components/layouts/header/navbar'
 import { createMetadata } from '@/modules/shared/utils/create-metadata'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
+import Provider from './providers'
 
 export const metadata = createMetadata({
 	title: 'Discover the Best Movies and Upcoming Releases',

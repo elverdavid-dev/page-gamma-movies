@@ -14,4 +14,6 @@ export interface Movie {
 	video: boolean
 	vote_average: number
 	vote_count: number
+	first_air_date?: string
+	name?: string
 }

@@ -1,16 +1,10 @@
-import Image from 'next/image'
+import { PlaySquareIcon } from 'hugeicons-react'
 import Link from 'next/link'
 
 const Logo = () => {
 	return (
-		<Link href="/">
-			<Image
-				src="/logo.svg"
-				alt="logo"
-				width={150}
-				height={50}
-				className="mr-16 w-[150px] h-[50px]"
-			/>
+		<Link href="/" className='flex items-center gap-x-1 mr-16'>
+			<h3 className='text-2xl font-ibmPlexSans dark:text-white'>Gamma</h3>
 		</Link>
 	)
 }

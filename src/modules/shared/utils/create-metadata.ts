@@ -7,8 +7,8 @@ interface Props {
 	ogImg?: string
 }
 
-const siteUrl = 'https://technical-test-gamma.vercel.app'
-const siteName = 'Inlaze Movies'
+const siteUrl = 'https://gamma-movies.vercel.app/'
+const siteName = 'Gamma Movies'
 const descriptionDefault =
 	'Explore trending, popular, top-rated and upcoming movies in one place. Stay up to date with the best in cinema.'
 
@@ -19,7 +19,7 @@ export const createMetadata = ({
 	canonicalUrl,
 }: Props): Metadata => {
 	return {
-		title: `${title} | Inlaze Movies`,
+		title: `${title} | Gamma Movies`,
 		description: description ?? descriptionDefault,
 		metadataBase: new URL(siteUrl),
 		alternates: {
@@ -35,8 +35,8 @@ export const createMetadata = ({
 		},
 		openGraph: {
 			title: {
-				template: '%s | Inlaze Movies',
-				default: 'Inlaze Movies',
+				template: '%s | Gamma Movies',
+				default: 'Gamma Movies',
 			},
 			description: description ?? descriptionDefault,
 			url: `${siteUrl}/${canonicalUrl}`,
@@ -50,7 +50,7 @@ export const createMetadata = ({
 			type: 'website',
 		},
 		twitter: {
-			title: `${title} | Inlaze Movies`,
+			title: `${title} | Gamma Movies`,
 			description: description ?? descriptionDefault,
 			images: [ogImg ?? '/og-image.png'],
 		},

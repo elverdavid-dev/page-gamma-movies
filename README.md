@@ -1,5 +1,3 @@
-# Technical Test Inlaze
-
 ## Technologies
 
 - [Next.js 14](https://nextjs.org/) - React framework for production

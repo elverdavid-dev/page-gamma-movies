@@ -89,7 +89,7 @@ const Navbar2 = () => {
 					</Suspense>
 				</NavbarItem>
 				{/* Theme toggle */}
-				<NavbarItem>
+				<NavbarItem className='pl-10'>
 					<ThemeToggle />
 				</NavbarItem>
 

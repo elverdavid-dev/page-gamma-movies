@@ -13,7 +13,7 @@ const MovieInfoHero = ({ movie }: Props) => {
       text: movie.overview,
       url: `/movie/${movie.id}`
     }
-    if (navigator.canShare && navigator.canShare(data)) {
+    if (navigator.canShare(data)) {
       navigator.share(data)
     }
   }

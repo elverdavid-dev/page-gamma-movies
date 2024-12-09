@@ -1,6 +1,6 @@
-import MoviesResult from '@/modules/search/components/movies-result'
-import MoviesResultSkeleton from '@/modules/search/components/skeleton/movies-result-skeleton'
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
+import MoviesResult from '@/search/components/movies-result'
+import MoviesResultSkeleton from '@/search/components/skeleton/movies-result-skeleton'
+import { createMetadata } from '@/utils/create-metadata'
 import { Suspense } from 'react'
 
 interface Props {

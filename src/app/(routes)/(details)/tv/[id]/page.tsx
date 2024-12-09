@@ -1,6 +1,6 @@
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
-import HeroSectionTv from '@/modules/tv/components/hero-section-tv'
-import { getDetailsTv } from '@/modules/tv/services/get-details-tv-show'
+import HeroSectionTv from '@/tv/components/hero-section-tv'
+import { getDetailsTv } from '@/tv/services/get-details-tv-show'
+import { createMetadata } from '@/utils/create-metadata'
 import { notFound } from 'next/navigation'
 
 interface Props {

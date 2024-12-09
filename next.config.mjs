@@ -7,7 +7,8 @@ const nextConfig = {
         hostname:"image.tmdb.org",
         pathname:"/**"
       }
-    ]
+    ],
+    unoptimized: true
   }
 };
 

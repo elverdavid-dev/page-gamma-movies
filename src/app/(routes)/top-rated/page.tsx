@@ -1,6 +1,6 @@
-import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
-import TopRatedContainer from '@/modules/top-rated/components/top-rated-container'
+import MoviesGridSkeleton from '@/components/movies/skeletons/movies-grid-skeleton'
+import TopRatedContainer from '@/top-rated/components/top-rated-container'
+import { createMetadata } from '@/utils/create-metadata'
 import { Suspense } from 'react'
 
 export const metadata = createMetadata({

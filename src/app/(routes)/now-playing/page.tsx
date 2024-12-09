@@ -1,6 +1,6 @@
-import NowPlayingContainer from '@/modules/now-playing/components/now-playing-container'
-import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
+import MoviesGridSkeleton from '@/components/movies/skeletons/movies-grid-skeleton'
+import NowPlayingContainer from '@/now-playing/components/now-playing-container'
+import { createMetadata } from '@/utils/create-metadata'
 import { Suspense } from 'react'
 
 export const metadata = createMetadata({

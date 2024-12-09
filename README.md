@@ -18,7 +18,7 @@ the project follows a modular architecture organized as follows:
 ```
 src/
 ├── modules/
-│   ├── shared/             # Shared functionality
+│   ├── core/             # core functionality
 │   │   ├── components/
 │   │   ├── services/
 │   │   ├── types/
@@ -50,9 +50,9 @@ src/
     ├── layout.tsx
 ```
 
-- modules/: Contains all feature-specific modules and the shared shared.
+- modules/: Contains all feature-specific modules and the core core.
 
-- shared/: Houses shared components, services, and utilities used across multiple modules.
+- core/: Houses core components, services, and utilities used across multiple modules.
 
 - Other directories (e.g., home/, search/, movie/) contain feature-specific code.
 

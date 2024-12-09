@@ -1,5 +1,5 @@
-import FavoriteContainer from '@/modules/favorite/components/favorite-container'
-import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
+import MoviesGridSkeleton from '@/components/movies/skeletons/movies-grid-skeleton'
+import FavoriteContainer from '@/favorite/components/favorite-container'
 import { Suspense } from 'react'
 
 const FavoritePage = async () => {

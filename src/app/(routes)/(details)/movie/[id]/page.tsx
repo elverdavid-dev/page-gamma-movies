@@ -1,6 +1,6 @@
-import HeroSection from '@/modules/movie/components/hero/hero-section-movie'
-import { getDetails } from '@/modules/movie/services/get-movie-details'
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
+import HeroSection from '@/movie/components/hero/hero-section-movie'
+import { getDetails } from '@/movie/services/get-movie-details'
+import { createMetadata } from '@/utils/create-metadata'
 import { notFound } from 'next/navigation'
 
 interface Props {

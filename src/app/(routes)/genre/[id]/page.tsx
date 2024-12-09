@@ -1,6 +1,6 @@
-import GenreContainer from '@/modules/genre/components/genre-container'
-import MoviesGridSkeleton from '@/modules/shared/components/movies/skeletons/movies-grid-skeleton'
-import { createMetadata } from '@/modules/shared/utils/create-metadata'
+import MoviesGridSkeleton from '@/components/movies/skeletons/movies-grid-skeleton'
+import GenreContainer from '@/genre/components/genre-container'
+import { createMetadata } from '@/utils/create-metadata'
 import { Suspense } from 'react'
 
 interface Props {

@@ -13,7 +13,7 @@ const Provider = ({ children }: Props) => {
 	return (
 		<>
 			<ProgressBar
-				color="#F0B90B"
+				color="#6ee7b7"
 				options={{ showSpinner: false }}
 				shallowRouting
 			/>
